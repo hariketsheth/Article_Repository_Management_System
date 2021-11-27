@@ -3,7 +3,9 @@
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
+
 </script>
+
           <?php
           if(isset($_POST['addcomment'])){
 $name=mysqli_real_escape_string($con,$_POST['ccname']);
