@@ -9,7 +9,6 @@
      addVisit($con, $ip , $_SERVER['HTTP_USER_AGENT'], $url_visit); 
           $posts = getFinalPost($con);
           $count=1;
-            
           ?>
   <head>
     <meta charset="utf-8" />
