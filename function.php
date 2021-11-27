@@ -11,6 +11,7 @@ function getCategory($con,$id){
     return $data['name'];
 
 }
+
 function getTagStyle($id){
     if($id==1){
         return '<span style="padding: 3px 10px; font-size: 0.85rem; margin: 8px; font-weight: bolder; text-align: center; border-radius: 30px; vertical-align: middle; border: 2px solid #737679; background: #393c41; color: #ffffff;">Approved</span>';
