@@ -9,7 +9,6 @@
 	<title>Profile | Athena</title>
 
 	<meta content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=no" name="viewport">
-
     <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
 
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
