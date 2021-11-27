@@ -1,0 +1,62 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          - name: Psalm - Code quality tool for PHP
+  # You may pin to the exact commit or the version.
+  # uses: mickaelandrieu/psalm-ga@96d28f514148a75c861aa0e60e5007a858c71f78
+  uses: mickaelandrieu/psalm-ga@v1.1
+  
+  - name: Psalm – Static Analysis for PHP
+  # You may pin to the exact commit or the version.
+  # uses: psalm/psalm-github-actions@2e545d38ff4387b370449e2673088cc8dc40cf1d
+  uses: psalm/psalm-github-actions@1.1.2
+  with:
+    # Whether or not to use Psalm’s security analysis
+    security_analysis: # optional
+    # File for Psalm’s output
+    report_file: # optional, default is 
+    # Whether or not Composer installs dev packages
+    composer_require_dev: # optional
+    # Whether or not the --ignore-platform-reqs flag is passed to Composer
+    composer_ignore_platform_reqs: # optional
+    
+    - name: Psalm – Security Scanner for PHP
+  # You may pin to the exact commit or the version.
+  # uses: psalm/psalm-github-security-scan@f3e6fd9432bc3e44aec078572677ce9d2ef9c287
+  uses: psalm/psalm-github-security-scan@1.2.1
+  with:
+    # File for Psalm’s output
+    report_file: # optional, default is results.sarif
