@@ -3,7 +3,6 @@
 <html lang="en">
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-
 <?php 
 
     if(isset($_GET['encryption_id']) && $_GET['encryption_id'] !=''){
