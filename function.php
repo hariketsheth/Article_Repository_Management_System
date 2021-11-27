@@ -67,7 +67,6 @@ function addVisit($con, $temp1, $temp2, $temp3){
     }
 }
 function getCategoryInfo($con,$id){
-
     $query="SELECT * FROM category WHERE id=$id";
 
     $run=mysqli_query($con,$query);
