@@ -161,6 +161,7 @@ if($count==0 && $count1==0){
 $query=mysqli_query($con,"insert into users(username, codekey, author, fullname, name, phone, gender, email, mailto, photo, role_1,role_2, role_3, activationcode,status) values('$verify1', '$secure', '$name', '$fname', '$validity', '$phone', '$gender', '$email', '$mailto', '$profilepic', '$role', '$roles', '$b1', '$activationcode', '$status')");
 $query1 = mysqli_query($con, "insert into pwd_change(username, codekey, password_change) values ('$verify1', '$secure', '$gib1')");
 $query2 = mysqli_query($con, "insert into newsletter(email) values ('$email')");
+
 	if($query && $query1 && $query2)
 	{
         try {
