@@ -137,7 +137,7 @@ function newsletter($con){
 
     text: 'Your email address could not be added to our newsletter at this moment. Please try again after some time ! ' ,
 
-    footer: 'Please do send us a mail in case you are consistently not able to subscribe to our newsletter at technocratsrobotics@gmail.com',
+    footer: 'Please do send us a mail in case you are consistently not able to subscribe to our newsletter at athena.help@gmail.com',
 
     icon: 'error',
 
