@@ -287,7 +287,7 @@
                 <p>
                   This Privacy Policy applies only to our online activities and
                   is valid for visitors to our website with regards to the
-                  information that they shared and/or collect in Technocrats
+                  information that they shared and/or collect in Athena
                   Robotics. This policy is not applicable to any information
                   collected offline or via channels other than this website.
                 </p>
@@ -493,19 +493,19 @@
 
       </nav>
     <nav class="m-footer-social">
-        <a href="https://twitter.com/technocratsr" target="_blank" rel="noopener" aria-label="Twitter">
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
           <span class="icon-twitter" aria-hidden="true"></span>
         </a>
-        <a href="https://github.com/technocrats-robotics" aria-label="GitHub">
+        <a href="https://github.com/" aria-label="GitHub">
             <span class="icon-github" aria-hidden="true"></span>
         </a>
-      <a href="https://www.facebook.com/technocratsrobotics/" target="_blank" rel="noopener" aria-label="Facebook">
+      <a href="https://www.facebook.com/athena.help/" target="_blank" rel="noopener" aria-label="Facebook">
         <span class="icon-facebook" aria-hidden="true"></span>
       </a>
-      <a href="https://www.instagram.com/technocratsrobotics/" target="_blank" rel="noopener" aria-label="Instagram">
+      <a href="https://www.instagram.com/athena.help/" target="_blank" rel="noopener" aria-label="Instagram">
         <span class="icon-instagram" aria-hidden="true"></span>
       </a>
-      <a href="https://www.linkedin.com/company/technocrats-robotics-vit" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/company/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <span class="icon-linkedin" aria-hidden="true"></span>
       </a>
     </nav>

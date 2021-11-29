@@ -140,30 +140,30 @@
         </nav>
         <nav class="m-footer-social">
           <a
-            href="https://twitter.com/technocratsr"
+            href="https://twitter.com/"
             target="_blank"
             rel="noopener"
             aria-label="Twitter"
           >
             <span class="icon-twitter" aria-hidden="true"></span>
           </a>
-          <a href="https://github.com/technocrats-robotics" aria-label="GitHub">
+          <a href="https://github.com/" aria-label="GitHub">
             <span class="icon-github" aria-hidden="true"></span>
           </a>
           <a
-            href="https://www.linkedin.com/company/technocrats-robotics-vit"
+            href="https://www.linkedin.com/company/"
             aria-label="LinkedIn"
           >
             <span class="icon-linkedin" aria-hidden="true"></span>
           </a>
           <a
-            href="https://www.facebook.com/technocratsrobotics/"
+            href="https://www.facebook.com/athena.help/"
             aria-label="Facebook"
           >
             <span class="icon-facebook" aria-hidden="true"></span>
           </a>
           <a
-            href="https://www.instagram.com/technocratsrobotics/"
+            href="https://www.instagram.com/athena.help/"
             aria-label="Instagram"
           >
             <span class="icon-instagram" aria-hidden="true"></span>
