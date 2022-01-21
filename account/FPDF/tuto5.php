@@ -34,4 +34,3 @@ $prop = array('HeaderColor'=>array(255,150,100),
             'padding'=>2);
 $pdf->Table($link,'select * from visitors order by time_created_at DESC',$prop);
 $pdf->Output('D', 'athena-visitors-'.$user.'.pdf');
-?>
