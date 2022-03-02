@@ -15,17 +15,12 @@ body:
       placeholder: Please include a summary. Please also include relevant motivation and context. 
       value: "Description"
   - type: dropdown
-    id: version
-    attributes:
-      label: Domain
-      description: Select domain of Contribution
-  - type: dropdown
     id: contribtype
     attributes:
       label: Type of Contribution
       multiple: true
       options:
-        - UI Enhancement
+        - Enhancement
         - Feature Addition
         - Feature Update
         - UI Fix
