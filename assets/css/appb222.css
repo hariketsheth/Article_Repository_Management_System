@@ -266,6 +266,8 @@ textarea {
   --toggle-darkmode-background-color: rgba(0, 0, 0, 0.05);
   --header-menu-gradient-first-color: hsla(0, 0%, 100%, 0);
   --header-menu-gradient-second-color: #fff;
+  --navbar-tag-li-a-bgcolor:#8888ff;
+  --navbar-tag-li-a-txtcolor:#161515;
 }
 [data-theme="dark"] {
   --background-color: #111;
@@ -291,6 +293,8 @@ textarea {
   --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
   --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
   --header-menu-gradient-second-color: rgba(17, 17, 17, 0.65);
+  --navbar-tag-li-a-bgcolor:#3a3a8a;
+  --navbar-tag-li-a-txtcolor:#ffffff;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -317,6 +321,8 @@ textarea {
     --toggle-darkmode-background-color: rgba(0, 0, 0, 0.5);
     --header-menu-gradient-first-color: rgba(17, 17, 17, 0);
     --header-menu-gradient-second-color: rgba(17, 17, 17, 0.65);
+    --navbar-tag-li-a-bgcolor:#3a3a8a;
+    --navbar-tag-li-a-txtcolor:#ffffff;
   }
 }
 .hide {
@@ -1637,14 +1643,19 @@ fieldset {
   letter-spacing: 0.2px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-right: 30px;
-  margin-bottom: 10px !important;
+  /* margin-right: 30px; */
+  /* margin-bottom: 10px !important; */
+  margin-right: 15px; 
+  margin-bottom: 15px !important;
 }
 .m-tags li:last-of-type {
   margin-right: 0;
 }
 .m-tags li a {
-  color: var(--link-color) !important;
+    color: var(--navbar-tag-li-a-txtcolor) !important; 
+    background-color: var(--navbar-tag-li-a-bgcolor);
+    padding: 3px 7px;
+    border-radius: 15px;
 }
 .m-toggle-darkmode {
   position: fixed;
