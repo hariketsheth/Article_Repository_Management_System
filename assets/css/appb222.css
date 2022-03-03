@@ -267,7 +267,7 @@ textarea {
   --header-menu-gradient-first-color: hsla(0, 0%, 100%, 0);
   --header-menu-gradient-second-color: #fff;
   --navbar-tag-li-a-bgcolor:#8888ff;
-  --navbar-tag-li-a-txtcolor:#ffffff;
+  --navbar-tag-li-a-txtcolor:#161515;
 }
 [data-theme="dark"] {
   --background-color: #111;
