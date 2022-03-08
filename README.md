@@ -21,10 +21,10 @@
 <br>
 
 ## Project Information
-[![Language Used](https://img.shields.io/badge/FrontEnd-HTML,%20CSS,%20JavaScript,%20TypeScript,%20JQuery-blue)](https://github.com/hariketsheth/Article_Repository_Management_System)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![Language Used](https://img.shields.io/badge/FrontEnd-HTML,%20CSS,%20JavaScript,%20JQuery-blue)](https://github.com/hariketsheth/Article_Repository_Management_System)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [![Build](https://img.shields.io/badge/build-passing-green)](https://github.com/hariketsheth/Article_Repository_Management_System)
 
-[![Language Used](https://img.shields.io/badge/Backend-JavaScript,%20PHP,%20MySQL-red)](https://github.com/hariketsheth/Article_Repository_Management_System)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![Language Used](https://img.shields.io/badge/Backend-JavaScript,%20PHP,%20MySQL,%20TypeScript-red)](https://github.com/hariketsheth/Article_Repository_Management_System)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <br>
 
