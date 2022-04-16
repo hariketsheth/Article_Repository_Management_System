@@ -1,10 +1,15 @@
-# Athena : Article Repository Management System
+<h1 align="center"> Athena : Article Repository Management System</h1>
+
 
 [![Athena Badge](https://img.shields.io/badge/Project-Article%20Repository%20Management%20System-orange?style=for-the-badge&logo=github)](https://github.com/hariketsheth/Article_Repository_Management_System)
 
->### About the Project 
-> In this Tech Savvy era, with lot of advancements in the field of AI, ML, IoT and Deep Learning - People are randomly posting out random, partial and incomplete data on internet. 
-> ARMS proposes a Reviewed Article System in which article is published only after review. With added features for visually impaired, ARMS is ready to be implemented
+### About Athena 
+Athena aspires to become a strong center for educational excellence capable of responding to emerging educational challenges and needs in a fast changing society. With its core values of fairness, honesty and integrity, Athena will always strive hard to build character, sharpen the intellect and encourage critical thinking among students through modern education retaining traditional values.
+
+Consistent with its vision, Athena imparts quality education to students in a conducive, enabling, safe environment backed by robust infrastructure. A wide variety of innovative teaching practices are used to empower students with knowledge, methods, skills & techniques, so that they achieve their full potential & become academically sound, professionally competent & socially relevant.
+### About the Project 
+ In this Tech Savvy era, with lot of advancements in the field of AI, ML, IoT and Deep Learning - People are randomly posting out random, partial and incomplete data on internet. 
+ ARMS proposes a Reviewed Article System in which article is published only after review. With added features for visually impaired, ARMS is ready to be implemented
 >
 > The features include:
 > 1. **Automated System** - A Fully Automated Content Posting System
@@ -19,6 +24,8 @@
 > 10. **Rating** - Rating System for every post, A cummulative average rating is calculated.
 
 <br>
+
+## Take a look at our website 
 
 ## Project Information
 [![Language Used](https://img.shields.io/badge/FrontEnd-HTML,%20CSS,%20JavaScript,%20JQuery-blue)](https://github.com/hariketsheth/Article_Repository_Management_System)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -38,3 +45,47 @@
   ```php
   $con = mysqli_connect('localhost', 'root', '', 'YOUR_DATABASE_NAME');
   ```
+
+
+
+## Instructions to contribute 
+
+To contribute fork this repository and clone it. Make changes and create a pull request. Follow the step below to contribute.
+
+#### Add your email and user name in git bash 
+`$ git config --global user.name "YOUR NAME"`
+<br>
+` $ git config --global user.email "YOUR EMAIL ADDRESS"`
+
+#### Fork the repo
+On the upper right you can see a option to fork the repository. Fork it to make changes. 
+
+#### Clone the project
+Use the below command to clone the repo into your local system.
+
+` $ git clone https://hariketsheth/Article_Repository_Management_System.git `
+
+#### Add upstream to repository 
+`$ cd <your-forked-project-folder>`<br>
+`$ git remote add upstream https://github.com/SauravMukherjee44/Aec-Library-Website.git` <br>
+`$ git checkout main`<br>
+`$ git fetch upstream`<br>
+`$ git merge upstream/main`<br>
+`$ git push origin main`<br>
+
+#### Creating branch for the new change on feature or bug fix
+`$ git checkout -b <feature-branch>`<br>
+`$ git add --all`<br>
+`$ git commit -m "<commit message>"`<br>
+
+#### Creating pull request
+`$ git push origin main`
+
+
+
+## License
+
+
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+
+
