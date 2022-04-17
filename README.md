@@ -73,7 +73,7 @@ Use the below command to clone the repo into your local system.
 
 #### Add upstream to repository 
 `$ cd <your-forked-project-folder>`<br>
-`$ git remote add upstream https://github.com/SauravMukherjee44/Aec-Library-Website.git` <br>
+`$ git remote add upstream https://github.com/hariketsheth/Article_Repository_Management_System.git` <br>
 `$ git checkout main`<br>
 `$ git fetch upstream`<br>
 `$ git merge upstream/main`<br>
