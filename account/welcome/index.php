@@ -579,6 +579,10 @@
                                         <i class="fa fa-plus-circle text-center mr-1"></i>
                                         Add Posts
                                     </a>
+                                  <a class="nav-link" id="addDpost-tab" data-toggle="pill" href="#addDpost" role="tab" aria-controls="addDpost" aria-selected="false">
+                                        <i class="fa fa-plus-circle text-center mr-1"></i>
+                                        Add Draft Posts
+                                    </a>
                                     <?php if ($fetch_info['role_2'] == "Admin") { ?>
                                         <a class="nav-link" id="users-tab" data-toggle="pill" href="#users" role="tab" aria-controls="users" aria-selected="false">
                                             <i class="fa fa-users text-center mr-1"></i>
@@ -1234,6 +1238,82 @@
                                         </section>
                                     </div>
                                 </div>
+                                
+                                <div class="tab-pane fade" id="addDpost" role="tabpanel" aria-labelledby="addpost-tab">
+                                    <h3 class="mb-4" style="font-family: Orion;">Add Draft Posts</h3>
+                                    <div class="col-lg-12">
+                                        <section class="panel">
+                                            <div class="panel-body">
+                                                <div class="form">
+                                                    <form action=" " method="POST" class="form-horizontal">
+
+                                                        <hr style="border-width: 5px;">
+                                                        <div class="form-group">
+                                                            <div class="col-sm-12">
+                                                                <label class="required-field">Post Title</label>
+                                                                <input style="display: inline;" type="text" class="form-control" name="post_title" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group col-sm-6">
+                                                                <div class="col-sm-12">
+                                                                    <label class="required-field">Select Post Category</label>
+
+                                                                    <select name="post_category" class="form-control" required>
+                                                                        <?php
+                                                                        $categories = getAllCategory($con);
+                                                                        foreach ($categories as $ct) {
+                                                                        ?>
+                                                                            <option value=<?php echo '"' . $ct['id'] . '"'; ?>>
+                                                                                <?php echo $ct['name']; ?></option>
+                                                                        <?php
+                                                                        }
+                                                                        ?>
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group col-sm-6">
+                                                                <div class="col-sm-12">
+                                                                    <label class="required-field">Header Blog Photo</label>
+
+                                                                    <input type="text" class="form-control" name="post_image" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <div class="col-sm-12">
+                                                                <label class="required-field">Post Content</label>
+                                                                <textarea class="form-control ckeditor" id="editor1" name="editor1" rows="10" required></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <hr style="border-width: 5px;">
+                                                        <div class="form-group row">
+                                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Author
+                                                                Name</label>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" class="form-control" id="colFormLabel" value="<?= $fetch_info['author'] ?>" disabled="true">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                                                            <div class="col-sm-5">
+                                                                <?php $date = new DateTime("now", new DateTimeZone('Asia/Kolkata')); ?>
+                                                                <input type="text" class="form-control" id="colFormLabel" value="<?= $date->format('d/m/Y') ?>" disabled="true">
+                                                            </div>
+                                                        </div>
+                                                        <br><br>
+                                                        <input type="submit" name="add_submit" class="btn btn-success" value="Submit">
+                                                        <input type="submit" name="add_draft" class="btn btn-primary" value="Save as Draft">
+                                                        <input type="button" name="add_cancel" class="btn btn-secondary" value="Cancel">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            
                                 <div class="tab-pane fade" id="dbback" role="tabpanel" aria-labelledby="dbback-tab">
                                     <h3 class="mb-4" style="font-family: Orion;">Add Posts</h3>
                                     <div class="col-lg-12">
@@ -1244,6 +1324,17 @@
                                         </section>
                                     </div>
                                 </div>
+                                
+                                 <div class="tab-pane fade" id="dbback" role="tabpanel" aria-labelledby="dbback-tab">
+                                    <h3 class="mb-4" style="font-family: Orion;">Add Draft Posts</h3>
+                                    <div class="col-lg-12">
+                                        <section class="panel">
+                                            <div class="panel-body">
+
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>    
                                 <div class="tab-pane fade" id="mypost" role="tabpanel" aria-labelledby="mypost-tab">
                                     <h3 class="mb-4" style="font-family: Orion;">My Posts</h3>
                                     <div class="row" style="overflow-y:auto; height: 550px; width: auto;">
@@ -1419,6 +1510,11 @@
                                                                         <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                             Add Tag
                                                                         </button>
+                                                                        <a href = "deletecomment.php">
+                                                                         <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                            Delete Comment
+                                                                        </button> </a>
+                                                                       
 
                                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style="background: #0d1117;">
                                                                             <script>
