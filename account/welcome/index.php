@@ -622,7 +622,7 @@
                                         </a><?php }
                                     } ?>
                                 <a class="nav-link" id="logout-tab" data-toggle="pill" href="#logout" role="tab" aria-controls="logout" aria-selected="false">
-                                    <i class="fa fa-arrow-circle-right text-center mr-1"></i>
+                                    <i class="fa fa-arrow-circle-right text-center mr-3"></i>
                                     Logout
                                 </a>
                                 <br><br>
