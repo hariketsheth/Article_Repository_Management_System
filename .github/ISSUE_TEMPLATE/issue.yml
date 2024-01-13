@@ -1,7 +1,7 @@
 name: New Issue
 description: Description
 title: "[Create New Issue]: "
-labels: ["GSSoC22"]
+labels: ["IWOC2024"]
 body:
   - type: markdown
     attributes:
@@ -32,5 +32,5 @@ body:
       label: Code of Conduct
       description: By submitting this issue, you agree to follow our [Code of Conduct]()
       options:
-        - label: I follow [Contributing Guidelines](https://github.com/hariketsheth/Article_Repository_Management_System/CONTRIBUTING.md) & [Code of conduct](https://github.com/hariketsheth/Article_Repository_Management_System/CODE_OF_CONDUCT.md) of this project.
+        - label: I follow [Contributing Guidelines](https://github.com/hariketsheth/Article_Repository_Management_System/blob/main/CONTRIBUTING.md) & [Code of conduct](https://github.com/hariketsheth/Article_Repository_Management_System/blob/main/CODE_OF_CONDUCT.md) of this project.
           required: true
