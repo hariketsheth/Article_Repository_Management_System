@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
-    <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+    <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/sweetalert2.all.min.js"> </script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/jquery-3.4.1.min.js"></script> 
-	  <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/sweetalert2.min.css" />
+	  <script src="https://athena-dbms.42web.io/account/js/sweetalert2.all.min.js"> </script>
+	  <script src="https://athena-dbms.42web.io/account/js/jquery-3.4.1.min.js"></script> 
+	  <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/sweetalert2.min.css" />
 	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet" href="css/style.css" />
 	  <script>
@@ -71,7 +71,7 @@ Swal.fire('Stop There!',
 'warning'
 
 ).then((value) => {
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });</script>";
 }
 
@@ -88,7 +88,7 @@ if(($_SESSION['connectiondb']=="false") ){
   confirmButtonText: 'Continue'
 })
       .then((value) => {
-     location.href='https://pdc-fallsem.42web.io/account/login.php'
+     location.href='https://athena-dbms.42web.io/account/login.php'
 	 });
       </script>
 <?php
@@ -126,7 +126,7 @@ if ($_POST['uname']== $fetch_info['username'] && md5($_POST['pass'])==$fetch_inf
 })
       .then((value) => {
      location.href='mailto:hariket.sukeshkumar2020@gmail.com'
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });
       </script>
 	 <?php
@@ -138,7 +138,7 @@ Swal.fire('Account Not Verified !!',
 'info'
 
 ).then((value) => {
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });</script>";
 }
 }
@@ -159,7 +159,7 @@ else if ($_POST['uname']== $fetch_info['username'] && md5($_POST['pass'])==$fetc
 })
       .then((value) => {
      location.href='mailto:hariket.sukeshkumar2020@gmail.com'
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });
       </script>
 	 
@@ -195,7 +195,7 @@ swalWithBootstrapButtons.fire({
       'success'
     )
    .then((value) => {
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });
   } else if (
     
@@ -207,7 +207,7 @@ swalWithBootstrapButtons.fire({
       'error'
     )
       .then((value) => {
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });
   }
 })</script>
@@ -237,11 +237,11 @@ else if ((strlen($_POST['uname']) > 0) && ($_POST['uname']==$fetch_info['usernam
 
 	.then((value) => {
 	 window.open("mailto:hariket.sukeshkumar2020@gmail.com?subject=LOST MY PORTAL PASSWORD");
-     location.href='https://pdc-fallsem.42web.io/account/login.php' 
+     location.href='https://athena-dbms.42web.io/account/login.php' 
 	 });
   }
   else {
-      location.href='https://pdc-fallsem.42web.io/account/login.php' 
+      location.href='https://athena-dbms.42web.io/account/login.php' 
   }
 })  </script>
 <?php
@@ -266,11 +266,11 @@ else if ((strlen(md5($_POST['pass'])) > 0) && (strlen($_POST['uname']) == 0))
     )
 	.then((value) => {
 	 window.open("mailto:hariket.sukeshkumar2020@gmail.com?subject=LOST MY PORTAL USERNAME");
-     location.href='https://pdc-fallsem.42web.io/account/login.php' 
+     location.href='https://athena-dbms.42web.io/account/login.php' 
 	 });
   }
   else {
-      location.href='https://pdc-fallsem.42web.io/account/login.php' 
+      location.href='https://athena-dbms.42web.io/account/login.php' 
   }
 })  </script>
 <?php
@@ -295,12 +295,12 @@ else if ((strlen($_POST['uname']) > 0) && (strlen(md5($_POST['pass'])) == 0))
     )
 	.then((value) => {
 	 window.open("mailto:hariket.sukeshkumar2020@gmail.com?subject=LOST MY PORTAL PASSWORD");
-     location.href='https://pdc-fallsem.42web.io/account/login.php' 
+     location.href='https://athena-dbms.42web.io/account/login.php' 
 	 });
   }
 
   else {
-      location.href='https://pdc-fallsem.42web.io/account/login.php' 
+      location.href='https://athena-dbms.42web.io/account/login.php' 
   }
 })  </script>
 <?php
@@ -310,7 +310,7 @@ else if ((strlen($_POST['uname']) > 0) && (strlen(md5($_POST['pass'])) == 0))
 	  'This username does not exist. If you are a new member, then please SIGN UP first' ,  
 	  'error' )
       .then((value) => {
-     location.href='https://pdc-fallsem.42web.io/account/login.php' 
+     location.href='https://athena-dbms.42web.io/account/login.php' 
 	 });
       </script>";
   }
@@ -319,7 +319,7 @@ else if ((strlen($_POST['uname']) > 0) && (strlen(md5($_POST['pass'])) == 0))
 	  'Error. Something unexpected as happened. Please wait, we will repair it soon' ,  
 	  'error' )
       .then((value) => {
-     location.href='https://pdc-fallsem.42web.io/account/login.php' 
+     location.href='https://athena-dbms.42web.io/account/login.php' 
 	 });
       </script>";
   }
@@ -332,7 +332,7 @@ else {
 	  'Error. Something unexpected as happened. Please wait, we will repair it soon' ,  
 	  'error' )
       .then((value) => {
-     location.href='https://pdc-fallsem.42web.io/account/login.php' 
+     location.href='https://athena-dbms.42web.io/account/login.php' 
 	 });
       </script>";
 }
@@ -343,7 +343,7 @@ else
 	  'Error. Something unexpected as happened. Please wait, we will repair it soon' ,  
 	  'error' )
       .then((value) => {
-     location.href='https://pdc-fallsem.42web.io/account/login.php' 
+     location.href='https://athena-dbms.42web.io/account/login.php' 
 	 });
       </script>";
 }

@@ -23,7 +23,7 @@
     <title><?=$post['title']?></title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+   <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
     <link rel="preload" href="../assets/css/appb222.css?v=214a6e5c0e" as="style" />
     <link rel="preload" href="../assets/js/manifestb222.js?v=214a6e5c0e" as="script" />
     <link rel="preload" href="../assets/js/vendor/content-api.minb222.js?v=214a6e5c0e" as="script" />
@@ -32,10 +32,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preload" href="assets/css/appb222.css?v=214a6e5c0e" as="style" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/sweetalert2.all.min.js"> </script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/jquery-3.4.1.min.js"></script> 
-	  <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/sweetalert2.min.css" />
-      <link rel="stylesheet" href="https://pdc-fallsem.42web.io/assets/css/emoji.css" />
+	  <script src="https://athena-dbms.42web.io/account/js/sweetalert2.all.min.js"> </script>
+	  <script src="https://athena-dbms.42web.io/account/js/jquery-3.4.1.min.js"></script> 
+	  <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/sweetalert2.min.css" />
+      <link rel="stylesheet" href="https://athena-dbms.42web.io/assets/css/emoji.css" />
 	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="preconnect" href="https://polyfill.io/">
@@ -157,7 +157,7 @@
                               foreach(array_slice($temp,0,3) as $a){
                               ?>
                                 <div class="glide__slide">
-                                  <a href="https://pdc-fallsem.42web.io/post.php?post_link=<?=$a['id']?>" class="m-recent-article">
+                                  <a href="https://athena-dbms.42web.io/post.php?post_link=<?=$a['id']?>" class="m-recent-article">
                                     <div class="m-recent-article__picture ">
                                         <img src="<?=$a['header']?>" onerror=this.src='../account/img/default.png' loading="lazy" alt="">
                                     </div>
@@ -178,7 +178,7 @@
                         <?php foreach(getAllCategory($con) as $category){ ?>
                             <li>
                            
-                              <a href="https://pdc-fallsem.42web.io/tag/posts.php?category_id=<?=$category['id']?>"><?=$category['name']?></a>
+                              <a href="https://athena-dbms.42web.io/tag/posts.php?category_id=<?=$category['id']?>"><?=$category['name']?></a>
                             </li>
                         <?php } ?>
                         </ul>
@@ -263,11 +263,11 @@
                     class="m-icon-button filled in-share" style="--primary-subtle-color: #5cb85c !important;"  rel="noopener" aria-label="Facebook">
                     <span class="fa fa-bookmark" aria-hidden="true"></span>
                   </a>
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://pdc-fallsem.42web.io/post.php?post_link=<?=$post['id']?>"
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://athena-dbms.42web.io/post.php?post_link=<?=$post['id']?>"
                     class="m-icon-button filled in-share" style="--primary-subtle-color: #5cb85c !important;" target="_blank" rel="noopener" aria-label="Facebook">
                     <span class="icon-facebook" aria-hidden="true"></span>
                   </a>
-                  <a href="https://twitter.com/intent/tweet?text=<?=$post['title']?>&url=https://pdc-fallsem.42web.io/post.php?post_link=<?=$post['id']?>"
+                  <a href="https://twitter.com/intent/tweet?text=<?=$post['title']?>&url=https://athena-dbms.42web.io/post.php?post_link=<?=$post['id']?>"
                     class="m-icon-button filled in-share" target="_blank" style="--primary-subtle-color: #5cb85c !important;" rel="noopener" aria-label="Twitter">
                     <span class="icon-twitter" aria-hidden="true"></span>
                   </a>
@@ -522,15 +522,15 @@
     <div class="m-recommended-slider__item glide__slide">
   <article class="m-article-card  post tag">
     <div class="m-article-card__picture">
-      <a href="https://pdc-fallsem.42web.io/post.php?post_link=<?=$recent['id']?>" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
+      <a href="https://athena-dbms.42web.io/post.php?post_link=<?=$recent['id']?>" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
         <img class="m-article-card__picture-background" src="<?=$recent['header']?>" onerror=this.src='../account/img/default.png' loading="lazy" alt="">
-      <a href="https://pdc-fallsem.42web.io/author/profile.php?encryption_id=<?=$info['username']?>" class="m-article-card__author js-tooltip" aria-label="<?=$a['author']?>" data-tippy-content="Posted by <?=$a['author']?> ">
+      <a href="https://athena-dbms.42web.io/author/profile.php?encryption_id=<?=$info['username']?>" class="m-article-card__author js-tooltip" aria-label="<?=$a['author']?>" data-tippy-content="Posted by <?=$a['author']?> ">
           <div style="background-image: url(<?=$a['photo']?>);"></div>
       </a>
     </div>
       <div class="m-article-card__info">
-        <a href="https://pdc-fallsem.42web.io/tag/posts.php?category_id=<?=$recent['category_id']?>" class="m-article-card__tag"><?=getCategory($con,$recent['category_id'])?></a>
-      <a href="https://pdc-fallsem.42web.io/post.php?post_link=<?=$recent['id']?>" class="m-article-card__info-link" aria-label="<?=$recent['title']?>">
+        <a href="https://athena-dbms.42web.io/tag/posts.php?category_id=<?=$recent['category_id']?>" class="m-article-card__tag"><?=getCategory($con,$recent['category_id'])?></a>
+      <a href="https://athena-dbms.42web.io/post.php?post_link=<?=$recent['id']?>" class="m-article-card__info-link" aria-label="<?=$recent['title']?>">
         <div>
           <h2 class="m-article-card__title js-article-card-title " title="<?=$recent['title']?>">
             <?=$recent['title']?>
@@ -578,7 +578,7 @@
               <a href="contact/index.php">Contact</a>
             </li>
       <li class="nav-contact">
-        <a href="https://pdc-fallsem.42web.io/account/login.php">Contribute / Login</a>
+        <a href="https://athena-dbms.42web.io/account/login.php">Contribute / Login</a>
       </li>
           </ul>
         </nav>
@@ -633,12 +633,12 @@
 
         }
                 else{
-            echo "<script>location.href='https://pdc-fallsem.42web.io/';</script>";
+            echo "<script>location.href='https://athena-dbms.42web.io/';</script>";
         }
     }
     }
     else{
-       echo "<script>location.href='https://pdc-fallsem.42web.io/';</script>";
+       echo "<script>location.href='https://athena-dbms.42web.io/';</script>";
     }
     ?>
   </body>

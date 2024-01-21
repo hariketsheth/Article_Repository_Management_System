@@ -10,19 +10,19 @@
 
 	<meta content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+    <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
 
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<script src="https://pdc-fallsem.42web.io/account/js/sweetalert2.all.min.js"> </script>
+	<script src="https://athena-dbms.42web.io/account/js/sweetalert2.all.min.js"> </script>
 
-	<link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/sweetalert2.min.css" />
+	<link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/sweetalert2.min.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://pdc-fallsem.42web.io/account/js/ckeditor/ckeditor.js"></script>
+    <script src="https://athena-dbms.42web.io/account/js/ckeditor/ckeditor.js"></script>
 
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 
@@ -54,7 +54,7 @@ label{
 
     font-family: Orion;
 
-    src: url(https://pdc-fallsem.42web.io/font/Orion.otf);
+    src: url(https://athena-dbms.42web.io/font/Orion.otf);
 
 }
 
@@ -78,7 +78,7 @@ if($email == false){
 
 ?>
 
- <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/style.css" />
+ <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/style.css" />
 
      <script
 
@@ -104,7 +104,7 @@ if($email == false){
 
       .then((value) => {
 
-     location.href='https://pdc-fallsem.42web.io/index.php'
+     location.href='https://athena-dbms.42web.io/index.php'
 
 	 });
 
@@ -120,7 +120,7 @@ else if($test == false){
 
  ?>
 
-  <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/style.css" />
+  <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/style.css" />
 
         <script
 
@@ -146,7 +146,7 @@ else if($test == false){
 
       .then((value) => {
 
-     location.href='https://pdc-fallsem.42web.io/account/welcome/logout.php'
+     location.href='https://athena-dbms.42web.io/account/welcome/logout.php'
 
 	 });
 
@@ -182,7 +182,7 @@ $xceding= (time()-$_SESSION['last_login_timestamp']);
 
       SavePost($con, $id1, $_POST['editor1']);
       unset($_POST['delete']);
-      echo "<script>location.href='https://pdc-fallsem.42web.io/account/welcome/index.php';</script>";
+      echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
 
   }
 
@@ -190,7 +190,7 @@ $xceding= (time()-$_SESSION['last_login_timestamp']);
 
       SavePost($con, $id1, $_POST['editor1']);
       unset($_POST['delete']);
-      echo "<script>location.href='https://pdc-fallsem.42web.io/account/welcome/index.php';</script>";
+      echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
 
   }
     
@@ -208,13 +208,13 @@ customClass: 'swal-wide',
   focusConfirm: false,
 
 }).then((result) => {
-    location.href='https://pdc-fallsem.42web.io/account/welcome/index.php';
+    location.href='https://athena-dbms.42web.io/account/welcome/index.php';
 })
           </script>
 
       <?php
          AssignPost($con, $id1);
-      //echo "<script>location.href='https://pdc-fallsem.42web.io/account/welcome/index.php';</script>";
+      //echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
     }
     else if((isset($_GET['encryption_post']) && $fetch_info['role_2'] != "Contributor" && $fetch_info1['status'] == 'In Review') || ($fetch_info1['status'] == 'Draft' && isset($_GET['encryption_post']) && $fetch_info1['username'] == $_SESSION['uname'])){
 
@@ -263,7 +263,7 @@ customClass: 'swal-wide',
     }
         else{
 
-            echo "<script>location.href='https://pdc-fallsem.42web.io/account/welcome/index.php';</script>";
+            echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
 
         }
 
@@ -289,7 +289,7 @@ session_destroy();
 
     
 
-    <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/style.css" />
+    <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/style.css" />
 
         <script
 
@@ -315,7 +315,7 @@ session_destroy();
 
       .then((value) => {
 
-     location.href='https://pdc-fallsem.42web.io/account/welcome/logout.php'
+     location.href='https://athena-dbms.42web.io/account/welcome/logout.php'
 
 	 });
 
@@ -333,7 +333,7 @@ session_destroy();
 
     
 
-    <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/style.css" />
+    <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/style.css" />
 
         <script
 
@@ -359,7 +359,7 @@ session_destroy();
 
       .then((value) => {
 
-     location.href='https://pdc-fallsem.42web.io/account/welcome/logout.php'
+     location.href='https://athena-dbms.42web.io/account/welcome/logout.php'
 
 	 });
 
@@ -375,7 +375,7 @@ session_destroy();
 
 else {
 
-  echo "<script>location.href='https://pdc-fallsem.42web.io/account/welcome/logout.php'</script>";
+  echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/logout.php'</script>";
 
 }
 

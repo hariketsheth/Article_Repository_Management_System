@@ -11,7 +11,7 @@
     <title>About</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+    <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
     <link rel="preload" href="../assets/css/appb222.css?v=214a6e5c0e" as="style" />
     <link rel="preload" href="../assets/js/manifestb222.js?v=214a6e5c0e" as="script" />
     <link rel="preload" href="../assets/js/vendor/content-api.minb222.js?v=214a6e5c0e" as="script" />
@@ -134,7 +134,7 @@
                               foreach(array_slice($temp,0,3) as $a){
                               ?>
                                 <div class="glide__slide">
-                                  <a href="https://pdc-fallsem.42web.io/post.php?post_link=<?=$a['id']?>" class="m-recent-article">
+                                  <a href="https://athena-dbms.42web.io/post.php?post_link=<?=$a['id']?>" class="m-recent-article">
                                     <div class="m-recent-article__picture ">
                                         <img src="<?=$a['header']?>" onerror=this.src='../account/img/default.png' loading="lazy" alt="">
                                     </div>
@@ -154,7 +154,7 @@
                         <ul>
                         <?php foreach(getAllCategory($con) as $category){ ?>
                             <li>
-                              <a href="https://pdc-fallsem.42web.io/tag/posts.php?category_id=<?=$category['id']?>"><?=$category['name']?></a>
+                              <a href="https://athena-dbms.42web.io/tag/posts.php?category_id=<?=$category['id']?>"><?=$category['name']?></a>
                             </li>
                         <?php } ?>
                         </ul>
@@ -233,7 +233,7 @@
         <a href="../contact/index.php">Contact</a>
       </li>
      <li class="nav-contact">
-        <a href="https://pdc-fallsem.42web.io/account/login.php">Contribute / Login</a>
+        <a href="https://athena-dbms.42web.io/account/login.php">Contribute / Login</a>
       </li>
   </ul>
 

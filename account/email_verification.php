@@ -4,15 +4,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
-    <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+    <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/sweetalert2.all.min.js"> </script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/jquery-3.4.1.min.js"></script> 
-	  <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/sweetalert2.min.css" />
+	  <script src="https://athena-dbms.42web.io/account/js/sweetalert2.all.min.js"> </script>
+	  <script src="https://athena-dbms.42web.io/account/js/jquery-3.4.1.min.js"></script> 
+	  <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/sweetalert2.min.css" />
 	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet" href="css/style.css" />
 	  <script>
@@ -80,7 +80,7 @@ Swal.fire(
 'success'
 
 ).then((value) => {
-	location.href='https://pdc-fallsem.42web.io/account/login.php'
+	location.href='https://athena-dbms.42web.io/account/login.php'
 	 });</script>";
 }
 else
@@ -91,7 +91,7 @@ Swal.fire('Already Verfied !!',
 'info'
 
 ).then((value) => {
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });</script>";
 }
 }
@@ -103,7 +103,7 @@ Swal.fire('Wrong Activation Code',
 'question'
 
 ).then((value) => {
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });</script>";
 }
 }
@@ -114,7 +114,7 @@ Swal.fire('Stop There!',
 'error'
 
 ).then((value) => {
-	 location.href='https://pdc-fallsem.42web.io/account/login.php'
+	 location.href='https://athena-dbms.42web.io/account/login.php'
 	 });</script>";
 }
 

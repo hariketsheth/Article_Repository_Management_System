@@ -8,16 +8,16 @@
     <title>Newsletter</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+    <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
     <link rel="preload" href="../assets/css/appb222.css?v=214a6e5c0e" as="style" />
     <link rel="preload" href="../assets/js/manifestb222.js?v=214a6e5c0e" as="script" />
     <link rel="preload" href="../assets/js/vendor/content-api.minb222.js?v=214a6e5c0e" as="script" />
     <link rel="preload" href="../assets/js/vendorb222.js?v=214a6e5c0e" as="script" />
     <link rel="preload" href="../assets/js/appb222.js?v=214a6e5c0e" as="script" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/sweetalert2.all.min.js"> </script>
-	  <script src="https://pdc-fallsem.42web.io/account/js/jquery-3.4.1.min.js"></script> 
-	  <link rel="stylesheet" href="https://pdc-fallsem.42web.io/account/css/sweetalert2.min.css" />
+	  <script src="https://athena-dbms.42web.io/account/js/sweetalert2.all.min.js"> </script>
+	  <script src="https://athena-dbms.42web.io/account/js/jquery-3.4.1.min.js"></script> 
+	  <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/sweetalert2.min.css" />
 	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="preconnect" href="https://polyfill.io/">
     <link rel="dns-prefetch" href="https://polyfill.io/">

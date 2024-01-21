@@ -6,7 +6,7 @@
     <link
       rel="icon"
       type="image/jpg"
-      href="https://pdc-fallsem.42web.io/account/img/logo.ico"
+      href="https://athena-dbms.42web.io/account/img/logo.ico"
     />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
@@ -79,7 +79,7 @@
             method="POST"
           >
             <img src="img/logo.png" height="150" width="150" style="border-radius: 100%;" />
-            <a style="text-decoration: none; font-weight: bolder; margin: 10px;" href="https://pdc-fallsem.42web.io/">Continue to Blog</a>
+            <a style="text-decoration: none; font-weight: bolder; margin: 10px;" href="https://athena-dbms.42web.io/">Continue to Blog</a>
             <h2 class="title" style="font-family: Orion; font-size: 1.5rem; word-spacing: -10px;">Are you Ready?</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>

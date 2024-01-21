@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Athena</title>
     <meta name="HandheldFriendly" content="True" />
-    <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+    <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
@@ -304,7 +304,7 @@
     </header>
 
     <main class="main-wrap">
-      <section class="m-hero no-picture" data-aos="fade" style="background: rgba(0, 0, 0,0.7); background-image: url('https://pdc-fallsem.42web.io/assets/images/intro.gif'); background-blend-mode: overlay;  background-size: cover;">
+      <section class="m-hero no-picture" data-aos="fade" style="background: rgba(0, 0, 0,0.7); background-image: url('https://athena-dbms.42web.io/assets/images/intro.gif'); background-blend-mode: overlay;  background-size: cover;">
         <div
           data-aos="fade-down"
           style="width: auto; max-width: 330px; align: left; left: -200px"
@@ -466,7 +466,7 @@
               <a href="contact/index.php">Contact</a>
             </li>
      <li class="nav-contact">
-        <a href="https://pdc-fallsem.42web.io/account/login.php">Contribute / Login</a>
+        <a href="https://athena-dbms.42web.io/account/login.php">Contribute / Login</a>
       </li>
           </ul>
         </nav>

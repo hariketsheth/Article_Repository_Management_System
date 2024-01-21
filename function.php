@@ -23,7 +23,7 @@ function SetBookmark($con,$id, $title, $post){
     $data = mysqli_fetch_assoc($query1);
     
     }
-echo "<script>location.href='https://pdc-fallsem.42web.io/post.php?post_link=".$post."';</script>";
+echo "<script>location.href='https://athena-dbms.42web.io/post.php?post_link=".$post."';</script>";
 }
 function getTagStyle($id){
     if($id==1){
@@ -76,7 +76,7 @@ function addVisit($con, $temp1, $temp2, $temp3){
     $query1 = mysqli_query($con, "INSERT INTO visitors(ip_address, mac_address, link, time_created_at) VALUES ('$temp1', '$temp2', '$temp3', '$time')");
     $data1 = mysqli_fetch_assoc($query1);
     if (!($query1)){
-        echo "<script>location.href = 'https://pdc-fallsem.42web.io/error/503.htm';</script>";
+        echo "<script>location.href = 'https://athena-dbms.42web.io/error/503.htm';</script>";
         
     }
 }
