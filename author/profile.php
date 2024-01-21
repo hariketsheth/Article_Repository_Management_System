@@ -3,737 +3,788 @@
 <html lang="en">
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<?php
 
-if (isset($_GET['encryption_id']) && $_GET['encryption_id'] != '') {
+<?php 
 
-  include('../connection.php');
+    if(isset($_GET['encryption_id']) && $_GET['encryption_id'] !=''){
 
-  include('../function.php');
+     include ('../connection.php');
 
-  $id = $_GET['encryption_id'];
+     include ('../function.php');
 
-  $inform = AuthorInformation($con, $id);
+     $id = $_GET['encryption_id'];
 
-  if (count($inform) != 0) {
+     $inform = AuthorInformation($con, $id);
 
-    foreach ($inform as $info) {
+     if(count($inform) != 0){
 
-      if ($info['gender'] == 'male' || $info['gender'] == 'others') {
+    foreach($inform as $info){
 
-        $default = 'https://bit.ly/3xgJuiM';
-      } else {
+        if($info['gender'] == 'male' || $info['gender'] == 'others'){
 
-        $default = 'https://bit.ly/3Cb76ZO';
+            $default = 'https://bit.ly/3xgJuiM';
+
+        }
+
+        else{
+
+            $default = 'https://bit.ly/3Cb76ZO';
+
+        }
+
+       ?>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title><?=$info['author']?> | Athena</title>
+
+    <meta name="HandheldFriendly" content="True" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preload" href="../../assets/css/appb222.css?v=214a6e5c0e" as="style" />
+
+    <link rel="preload" href="../../assets/js/manifestb222.js?v=214a6e5c0e" as="script" />
+
+    <link rel="preload" href="../../assets/js/vendor/content-api.minb222.js?v=214a6e5c0e" as="script" />
+
+    <link rel="preload" href="../../assets/js/vendorb222.js?v=214a6e5c0e" as="script" />
+
+    <link rel="preload" href="../../assets/js/appb222.js?v=214a6e5c0e" as="script" />
+
+    <link rel="preconnect" href="https://polyfill.io/">
+
+    <link rel="dns-prefetch" href="https://polyfill.io/">
+
+    <link rel="icon" type="image/jpg" href="https://pdc-fallsem.42web.io/account/img/logo.ico" />
+
+      <link rel="preload" href="../../assets/css/listingb222.css?v=214a6e5c0e" as="style" />
+
+
+
+
+
+    <style>
+
+      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
+
+
+
+      /* source-sans-pro-regular */
+
+      @font-face {
+
+        font-family: 'Source Sans Pro';
+
+        font-style: normal;
+
+        font-weight: 400;
+
+        font-display: swap;
+
+        src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-regularb222.woff2?v=214a6e5c0e") format('woff2'),
+
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-regularb222.woff?v=214a6e5c0e") format('woff');
+
       }
 
-?>
 
-      <head>
 
-        <meta charset="utf-8" />
+      /* source-sans-pro-600 */
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      @font-face {
 
-        <title><?= $info['author'] ?> | Athena</title>
+        font-family: 'Source Sans Pro';
 
-        <meta name="HandheldFriendly" content="True" />
+        font-style: normal;
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        font-weight: 600;
 
-        <link rel="preload" href="../../assets/css/appb222.css?v=214a6e5c0e" as="style" />
+        font-display: swap;
 
-        <link rel="preload" href="../../assets/js/manifestb222.js?v=214a6e5c0e" as="script" />
+        src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
 
-        <link rel="preload" href="../../assets/js/vendor/content-api.minb222.js?v=214a6e5c0e" as="script" />
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-600b222.woff2?v=214a6e5c0e") format('woff2'),
 
-        <link rel="preload" href="../../assets/js/vendorb222.js?v=214a6e5c0e" as="script" />
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-600b222.woff?v=214a6e5c0e") format('woff');
 
-        <link rel="preload" href="../../assets/js/appb222.js?v=214a6e5c0e" as="script" />
+      }
 
-        <link rel="preconnect" href="https://polyfill.io/">
 
-        <link rel="dns-prefetch" href="https://polyfill.io/">
 
-        <link rel="icon" type="image/jpg" href="https://athena-dbms.42web.io/account/img/logo.ico" />
+      /* source-sans-pro-700 */
 
-        <link rel="preload" href="../../assets/css/listingb222.css?v=214a6e5c0e" as="style" />
+      @font-face {
 
+        font-family: 'Source Sans Pro';
 
+        font-style: normal;
 
+        font-weight: 700;
 
+        font-display: swap;
 
-        <style>
-          /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
+        src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
 
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-700b222.woff2?v=214a6e5c0e") format('woff2'),
 
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-700b222.woff?v=214a6e5c0e") format('woff');
 
-          /* source-sans-pro-regular */
+      }
 
-          @font-face {
 
-            font-family: 'Source Sans Pro';
 
-            font-style: normal;
+      /* iconmoon */
 
-            font-weight: 400;
+      @font-face {
 
-            font-display: swap;
+        font-family: 'icomoon';
 
-            src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+        font-weight: normal;
 
-              url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-regularb222.woff2?v=214a6e5c0e") format('woff2'),
+        font-style: normal;
 
-              url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-regularb222.woff?v=214a6e5c0e") format('woff');
+        font-display: swap;
 
-          }
+        src: url("../../assets/fonts/icomoon/icomoon7f84.eot?101fc3?v=214a6e5c0e");
 
+        src: url("../../assets/fonts/icomoon/icomoon2c17.eot?101fc3#iefix?v=214a6e5c0e") format('embedded-opentype'),
 
+        url("../../assets/fonts/icomoon/icomoon7f84.ttf?101fc3?v=214a6e5c0e") format('truetype'),
 
-          /* source-sans-pro-600 */
+        url("../../assets/fonts/icomoon/icomoon7f84.woff?101fc3?v=214a6e5c0e") format('woff'),
 
-          @font-face {
+        url("../../assets/fonts/icomoon/icomoon2c17.svg?101fc3#icomoon?v=214a6e5c0e") format('svg');
 
-            font-family: 'Source Sans Pro';
+      }
 
-            font-style: normal;
+    </style>
 
-            font-weight: 600;
+    <link rel="stylesheet" type="text/css" href="../../assets/css/appb222.css?v=214a6e5c0e" media="screen" />
 
-            font-display: swap;
+      <link rel="stylesheet" type="text/css" href="../../assets/css/listingb222.css?v=214a6e5c0e" media="screen" />
 
-            src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+  </head>
 
-              url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-600b222.woff2?v=214a6e5c0e") format('woff2'),
+  <body class="author-template">
 
-              url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-600b222.woff?v=214a6e5c0e") format('woff');
+<header class="m-header  js-header">
 
-          }
+  <div class="m-mobile-topbar" data-aos="fade-down">
 
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
 
+      <span class="icon-menu" aria-hidden="true"></span>
 
-          /* source-sans-pro-700 */
+    </button>
 
-          @font-face {
+      <a href="../../index.php" class="m-site-name in-mobile-topbar">
 
-            font-family: 'Source Sans Pro';
+        Athena
 
-            font-style: normal;
+      </a>
 
-            font-weight: 700;
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
 
-            font-display: swap;
+      <span class="icon-search" aria-hidden="true"></span>
 
-            src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+    </button>
 
-              url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-700b222.woff2?v=214a6e5c0e") format('woff2'),
+  </div>
 
-              url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-700b222.woff?v=214a6e5c0e") format('woff');
 
-          }
 
+  <div class="m-menu js-menu">
 
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
 
-          /* iconmoon */
+      <span class="icon-close"></span>
 
-          @font-face {
+    </button>
 
-            font-family: 'icomoon';
+    <div class="m-menu__main" data-aos="fade-down">
 
-            font-weight: normal;
+      <div class="l-wrapper">
 
-            font-style: normal;
+        <div class="m-nav js-main-nav">
 
-            font-display: swap;
+          <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="Main menu">
 
-            src: url("../../assets/fonts/icomoon/icomoon7f84.eot?101fc3?v=214a6e5c0e");
+            <ul>
 
-            src: url("../../assets/fonts/icomoon/icomoon2c17.eot?101fc3#iefix?v=214a6e5c0e") format('embedded-opentype'),
+                <li class="only-desktop">
 
-              url("../../assets/fonts/icomoon/icomoon7f84.ttf?101fc3?v=214a6e5c0e") format('truetype'),
+                  <a href="../../index.php" class="m-site-name in-desktop-menu">
 
-              url("../../assets/fonts/icomoon/icomoon7f84.woff?101fc3?v=214a6e5c0e") format('woff'),
+                    Athena
 
-              url("../../assets/fonts/icomoon/icomoon2c17.svg?101fc3#icomoon?v=214a6e5c0e") format('svg');
+                  </a>
 
-          }
-        </style>
+                </li>
 
-        <link rel="stylesheet" type="text/css" href="../../assets/css/appb222.css?v=214a6e5c0e" media="screen" />
+                
 
-        <link rel="stylesheet" type="text/css" href="../../assets/css/listingb222.css?v=214a6e5c0e" media="screen" />
+    <li class="nav-home">
 
-      </head>
+      <a href="../../index.php">Blog</a>
 
-      <body class="author-template">
+    </li>
 
-        <header class="m-header  js-header">
+    <li class="nav-about">
 
-          <div class="m-mobile-topbar" data-aos="fade-down">
+      <a href="../../about/index.php">Know Us !</a>
 
-            <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+    </li>
 
-              <span class="icon-menu" aria-hidden="true"></span>
 
-            </button>
 
-            <a href="../../index.php" class="m-site-name in-mobile-topbar">
+                <li class="more">
 
-              Athena
+                  <span>
 
-            </a>
+                    <a href="javascript:void(0);" class="js-open-secondary-menu">
 
-            <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+                      More
 
-              <span class="icon-search" aria-hidden="true"></span>
+                      <span class="icon-chevron-down" aria-hidden="true"></span>
 
-            </button>
+                    </a>
 
-          </div>
+                  </span>
 
+                </li>
 
+              <li class="submenu-option js-submenu-option">
 
-          <div class="m-menu js-menu">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Open submenu">
 
-            <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+                  <span class="icon-more" aria-hidden="true"></span>
 
-              <span class="icon-close"></span>
+                </button>
 
-            </button>
+                <div class="m-submenu js-submenu">
 
-            <div class="m-menu__main" data-aos="fade-down">
+                  <div class="l-wrapper in-submenu">
 
-              <div class="l-wrapper">
+                    <section class="m-recent-articles">
 
-                <div class="m-nav js-main-nav">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
 
-                  <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="Main menu">
+                          <div class="glide js-recent-slider">
 
-                    <ul>
+                            <div class="glide__track" data-glide-el="track">
 
-                      <li class="only-desktop">
+                              <div class="glide__slides">
 
-                        <a href="../../index.php" class="m-site-name in-desktop-menu">
+                            <?php foreach(array_slice(getFinalPost($con), 0, 3) as $a) { ?>
 
-                          Athena
+                                <div class="glide__slide">
 
-                        </a>
+                                  <a href="https://pdc-fallsem.42web.io/post.php?post_link=<?=$a['id']?>" class="m-recent-article">
 
-                      </li>
+                                    <div class="m-recent-article__picture ">
 
+                                        <img src="<?=$a['header']?>" onerror=this.src='../account/img/default.png' loading="lazy" alt="">
 
+                                    </div>
 
-                      <li class="nav-home">
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="<?=$a['title']?>">
 
-                        <a href="../../index.php">Blog</a>
+                                      <?=$a['title']?>
 
-                      </li>
+                                    </h3>
 
-                      <li class="nav-about">
+                                    <span class="m-recent-article__date"><?=TimePost($a['created_at'])?></span>
 
-                        <a href="../../about/index.php">Know Us !</a>
-
-                      </li>
-
-
-
-                      <li class="more">
-
-                        <span>
-
-                          <a href="javascript:void(0);" class="js-open-secondary-menu">
-
-                            More
-
-                            <span class="icon-chevron-down" aria-hidden="true"></span>
-
-                          </a>
-
-                        </span>
-
-                      </li>
-
-                      <li class="submenu-option js-submenu-option">
-
-                        <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Open submenu">
-
-                          <span class="icon-more" aria-hidden="true"></span>
-
-                        </button>
-
-                        <div class="m-submenu js-submenu">
-
-                          <div class="l-wrapper in-submenu">
-
-                            <section class="m-recent-articles">
-
-                              <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
-
-                              <div class="glide js-recent-slider">
-
-                                <div class="glide__track" data-glide-el="track">
-
-                                  <div class="glide__slides">
-
-                                    <?php foreach (array_slice(getFinalPost($con), 0, 3) as $a) { ?>
-
-                                      <div class="glide__slide">
-
-                                        <a href="https://athena-dbms.42web.io/post.php?post_link=<?= $a['id'] ?>" class="m-recent-article">
-
-                                          <div class="m-recent-article__picture ">
-
-                                            <img src="<?= $a['header'] ?>" onerror=this.src='../account/img/default.png' loading="lazy" alt="">
-
-                                          </div>
-
-                                          <h3 class="m-recent-article__title js-recent-article-title" title="<?= $a['title'] ?>">
-
-                                            <?= $a['title'] ?>
-
-                                          </h3>
-
-                                          <span class="m-recent-article__date"><?= TimePost($a['created_at']) ?></span>
-
-                                        </a>
-
-                                      </div>
-
-                                    <?php } ?>
-
-                                  </div>
+                                  </a>
 
                                 </div>
 
-                              </div>
-
-                            </section>
-
-                            <section class="m-tags">
-
-                              <h3 class="m-submenu-title">Tags</h3>
-
-                              <ul>
-
-                                <?php foreach (getAllCategory($con) as $category) { ?>
-
-                                  <li>
-
-                                    <a href="https://athena-dbms.42web.io/tag/posts.php?category_id=<?= $category['id'] ?>"><?= $category['name'] ?></a>
-
-                                  </li>
-
                                 <?php } ?>
 
-                              </ul>
+                              </div>
 
-                            </section>
+                            </div>
 
                           </div>
 
-                        </div>
+                    </section>
 
-                      </li>
+                    <section class="m-tags">
 
-                    </ul>
+                      <h3 class="m-submenu-title">Tags</h3>
 
-                  </nav>
+                        <ul>
 
-                  <div class="m-nav__right">
+                         <?php foreach(getAllCategory($con) as $category){ ?>
 
-                    <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+                            <li>
 
-                      <span class="icon-search" aria-hidden="true"></span>
+                              <a href="https://pdc-fallsem.42web.io/tag/posts.php?category_id=<?=$category['id']?>"><?=$category['name']?></a>
 
-                    </button>
+                            </li>
 
-                    <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode" tabindex="0">
+                        <?php } ?>
 
-                      <label for="toggle-darkmode" class="sr-only">
+                        </ul>
 
-                        Toggle dark mode
-
-                      </label>
-
-                      <input id="toggle-darkmode" type="checkbox" class="js-toggle-darkmode">
-
-                      <div>
-
-                        <span class="icon-moon moon" aria-hidden="true"></span>
-
-                        <span class="icon-sunny sun" aria-hidden="true"></span>
-
-                      </div>
-
-                    </div>
+                    </section>
 
                   </div>
 
                 </div>
 
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <div id="secondary-navigation-template" style="display: none;">
-
-
-
-            <ul class="m-secondary-menu">
-
-              <li class="nav-data-privacy">
-
-                <a href="../../privacy/index.php">Data &amp; privacy</a>
-
-              </li>
-
-              <li class="nav-contact">
-
-                <a href="../../contact/index.php">Contact</a>
-
-              </li>
-
-              <li class="nav-contact">
-
-                <a href="../account/login.php">Contribute / Login</a>
-
               </li>
 
             </ul>
 
+          </nav>
 
+          <div class="m-nav__right">
 
-          </div>
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
 
-        </header>
+              <span class="icon-search" aria-hidden="true"></span>
 
+            </button>
 
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode" tabindex="0">
 
-        <main class="main-wrap">
+              <label for="toggle-darkmode" class="sr-only">
 
+                Toggle dark mode
 
+              </label>
 
-          <section class="m-hero no-picture " data-aos="fade">
+              <input id="toggle-darkmode" type="checkbox" class="js-toggle-darkmode">
 
-            <div class="m-hero__content" data-aos="fade-down">
+              <div>
 
-              <div class="m-hero-avatar" style="background-image: url(<?= $info['photo'] ?>), url(../account/img/default.png);"></div>
+                <span class="icon-moon moon" aria-hidden="true"></span>
 
-              <h1 class="m-hero-title"><?= $info['author'] ?></h1>
-
-              <p class="m-hero-description"><?= $info['bio'] ?></p>
-
-              <div class="m-hero__meta">
-
-                <ul class="m-hero-social">
-
-                  <?php if ($info['github'] != '') { ?>
-
-                    <li>
-
-                      <a href="<?= 'https://github.com/' . $info['github'] ?>" target="_blank" rel="noopener" aria-label="Github">
-
-                        <span class="icon-github"></span>
-
-                      </a>
-
-                    </li>
-
-                  <?php }
-
-                  if ($info['facebook'] != '') { ?>
-
-                    <li>
-
-                      <a href="<?= $info['facebook'] ?>" target="_blank" rel="noopener" aria-label="Facebook">
-
-                        <span class="icon-facebook"></span>
-
-                      </a>
-
-                    </li>
-
-                  <?php }
-
-                  if ($info['instagram'] != '') { ?>
-
-                    <li>
-
-                      <a href="<?= 'https://instagram.com/' . $info['instagram'] ?>" target="_blank" rel="noopener" aria-label="Instagram">
-
-                        <span class="icon-instagram"></span>
-
-                      </a>
-
-                    </li>
-
-                  <?php }
-
-                  if ($info['twitter'] != '') { ?>
-
-                    <li>
-
-                      <a href="<?= 'https://twitter.com/' . $info['twitter'] ?>" target="_blank" rel="noopener" aria-label="Twitter">
-
-                        <span class="icon-twitter"></span>
-
-                      </a>
-
-                    </li>
-
-                  <?php }
-
-                  if ($info['linkedin'] != '') { ?>
-
-                    <li>
-
-                      <a href="<?= $info['linkedin'] ?>" target="_blank" rel="noopener" aria-label="LinkedIn">
-
-                        <span class="icon-linkedin"></span>
-
-                      </a>
-
-                    </li>
-
-                  <?php }
-
-                  if ($info['website'] != '') { ?>
-
-                    <li>
-
-                      <a href="<?= $info['website'] ?>" target="_blank" rel="noopener" aria-label="Website">
-
-                        <span class="icon-globe"></span>
-
-                      </a>
-
-                    </li>
-
-                  <?php } ?>
-
-                </ul>
-
-                <ul class="m-hero-stats">
-
-                  <li>
-
-                    <?php
-
-                    $posts = getAuthorPost($con, $id);
-
-                    echo ((count($posts) < 2) ? count($posts) . ' post' : count($posts) . ' posts'); ?>
-
-                  </li>
-
-                  <li>&bull;</li>
-
-                  <li>India</li>
-
-                </ul>
+                <span class="icon-sunny sun" aria-hidden="true"></span>
 
               </div>
 
             </div>
 
-          </section>
-
-
-
-          <div class="l-content">
-
-            <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-
-              <div class="l-grid centered">
-
-                <?php
-
-                $count = 1;
-
-                $posts = getAuthorPost($con, $id);
-
-                foreach ($posts as $post) {
-
-                ?>
-
-                  <article class="m-article-card  post">
-
-                    <div class="m-article-card__picture">
-
-                      <a href="https://athena-dbms.42web.io/post.php?post_link=<?= $post['id'] ?>" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
-
-                      <img class="m-article-card__picture-background" src="<?= $post['header'] ?>" onerror=this.src="../account/img/default.png" loading="lazy" alt="">
-
-                      <a href="https://athena-dbms.42web.io/author/profile.php?encryption_id=<?= $info['username'] ?>" class="m-article-card__author js-tooltip" aria-label="<?= $info['author'] ?>" data-tippy-content="Posted by <?= $info['author'] ?>">
-
-                        <div style="background-image: url(<?= $info['photo'] ?>), url(<?= $default ?>);"></div>
-
-                      </a>
-
-                    </div>
-
-                    <div class="m-article-card__info">
-
-                      <a href="https://athena-dbms.42web.io/tag/posts.php?category_id=<?= $post['category_id'] ?>" class="m-article-card__tag"><?= getCategory($con, $post['category_id']) ?></a>
-
-                      <a href="https://athena-dbms.42web.io/post.php?post_link=<?= $post['id'] ?>" class="m-article-card__info-link" aria-label="<?= $post['title'] ?>">
-
-                        <div>
-
-                          <h2 class="m-article-card__title js-article-card-title " title="<?= $post['title'] ?>">
-
-                            <?= $post['title'] ?>
-
-                          </h2>
-
-                        </div>
-
-                        <div class="m-article-card__timestamp">
-
-                          <span><?= TimePost($post['created_at']) ?></span>
-
-                          <span>&bull;</span>
-
-                          <span><?= ReadTime($post['content']) ?></span>
-
-                        </div>
-
-                      </a>
-
-                    </div>
-
-                  </article>
-
-                <?php $count++;
-                } ?>
-
-              </div>
-
-            </div>
-
-
-
-            <div class="l-wrapper">
-
-              <nav class="m-pagination" aria-label="Pagination">
-
-                <span class="m-pagination__text">Page 1 of 1</span>
-
-              </nav>
-
-            </div>
-
-
-
           </div>
 
-        </main>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
 
-        <footer class="m-footer">
+    <div id="secondary-navigation-template" style="display: none;">
 
-          <div class="m-footer__content">
+      
 
-            <nav class="m-footer__nav-secondary" role="navigation" aria-label="Secondary menu in footer">
+  <ul class="m-secondary-menu">
 
-              <ul class="m-secondary-menu">
+      <li class="nav-data-privacy">
 
-                <li class="nav-data-privacy">
+        <a href="../../privacy/index.php">Data &amp; privacy</a>
 
-                  <a href="https://athena-dbms.42web.io/privacy/index.php">Data &amp; privacy</a>
+      </li>
+
+      <li class="nav-contact">
+
+        <a href="../../contact/index.php">Contact</a>
+
+      </li>
+
+      <li class="nav-contact">
+
+        <a href="../account/login.php">Contribute / Login</a>
+
+      </li>
+
+  </ul>
+
+
+
+    </div>
+
+</header>
+
+
+
+<main class="main-wrap">
+
+    
+
+  <section class="m-hero no-picture " data-aos="fade">
+
+      <div class="m-hero__content" data-aos="fade-down">
+
+          <div class="m-hero-avatar" style="background-image: url(<?=$info['photo']?>), url(../account/img/default.png);"></div>
+
+        <h1 class="m-hero-title"><?=$info['author']?></h1>
+
+          <p class="m-hero-description"><?=$info['bio']?></p>
+
+        <div class="m-hero__meta">
+
+            <ul class="m-hero-social">
+
+            <?php if ($info['github']!=''){ ?>
+
+                <li>
+
+                  <a href="<?='https://github.com/'.$info['github']?>" target="_blank" rel="noopener" aria-label="Github">
+
+                    <span class="icon-github"></span>
+
+                  </a>
 
                 </li>
 
-                <li class="nav-contact">
+            <?php } 
 
-                  <a href="https://athena-dbms.42web.io/contact/index.php">Contact</a>
+                if ($info['facebook']!=''){ ?>
+
+                <li>
+
+                  <a href="<?=$info['facebook']?>" target="_blank" rel="noopener" aria-label="Facebook">
+
+                    <span class="icon-facebook"></span>
+
+                  </a>
 
                 </li>
 
-                <li class="nav-contact">
+            <?php }
 
-                  <a href="https://athena-dbms.42web.io/account/login.php">Contribute / Login</a>
+                if ($info['instagram']!=''){ ?>
+
+                <li>
+
+                  <a href="<?='https://instagram.com/'.$info['instagram']?>" target="_blank" rel="noopener" aria-label="Instagram">
+
+                    <span class="icon-instagram"></span>
+
+                  </a>
 
                 </li>
 
-              </ul>
+            <?php }
 
-            </nav>
+                if ($info['twitter']!=''){ ?>
 
-            <nav class="m-footer-social">
+                <li>
 
-              <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+                  <a href="<?='https://twitter.com/'.$info['twitter']?>" target="_blank" rel="noopener" aria-label="Twitter">
 
-                <span class="icon-twitter" aria-hidden="true"></span>
+                    <span class="icon-twitter"></span>
 
-              </a>
+                  </a>
 
-              <a href="https://github.com" aria-label="GitHub">
+                </li>
 
-                <span class="icon-github" aria-hidden="true"></span>
+            <?php } 
 
-              </a>
+               if ($info['linkedin']!=''){ ?>
 
-              <a href="https://www.linkedin.com" aria-label="LinkedIn">
+                <li>
 
-                <span class="icon-linkedin" aria-hidden="true"></span>
+                  <a href="<?=$info['linkedin']?>" target="_blank" rel="noopener" aria-label="LinkedIn">
 
-              </a>
+                    <span class="icon-linkedin"></span>
 
-              <a href="https://www.facebook.com/" aria-label="Facebook">
+                  </a>
 
-                <span class="icon-facebook" aria-hidden="true"></span>
+                </li>
 
-              </a>
+            <?php } 
 
-              <a href="https://www.instagram.com/" aria-label="Instagram">
+               if ($info['website']!=''){ ?>
 
-                <span class="icon-instagram" aria-hidden="true"></span>
+                <li>
 
-              </a>
+                  <a href="<?=$info['website']?>" target="_blank" rel="noopener" aria-label="Website">
 
-            </nav>
+                    <span class="icon-globe"></span>
 
-            <p class="m-footer-copyright">
+                  </a>
 
-              <span>Athena &copy; 2021</span>
+                </li>
 
-              <span>&nbsp; &bull; &nbsp;</span>
+            <?php } ?>
 
-            </p>
+            </ul>
 
-          </div>
+          <ul class="m-hero-stats">
 
-        </footer>
+            <li>
 
-        <script crossorigin="anonymous" src="../../../polyfill.io/v3/polyfill.mina50e.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+            <?php
 
-        <script defer src="../../assets/js/manifestb222.js?v=214a6e5c0e"></script>
+            $posts = getAuthorPost($con, $id);
 
-        <script defer src="../../assets/js/vendor/content-api.minb222.js?v=214a6e5c0e"></script>
+            echo ((count($posts)<2)? count($posts).' post':count($posts).' posts'); ?>
 
-        <script defer src="../../assets/js/vendorb222.js?v=214a6e5c0e"></script>
+            </li>
 
-        <script defer src="../../assets/js/appb222.js?v=214a6e5c0e"></script>
+              <li>&bull;</li>
 
-  <?php
+              <li>India</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  
+
+  <div class="l-content">
+
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+
+      <div class="l-grid centered">
+
+    <?php 
+
+        $count=1;
+
+        $posts = getAuthorPost($con, $id);
+
+        foreach($posts as $post){
+
+    ?>
+
+  <article class="m-article-card  post">
+
+    <div class="m-article-card__picture">
+
+      <a href="https://pdc-fallsem.42web.io/post.php?post_link=<?=$post['id']?>" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
+
+        <img class="m-article-card__picture-background" src="<?=$post['header']?>" onerror=this.src="../account/img/default.png" loading="lazy" alt="">
+
+      <a href="https://pdc-fallsem.42web.io/author/profile.php?encryption_id=<?=$info['username']?>" class="m-article-card__author js-tooltip" aria-label="<?=$info['author']?>" data-tippy-content="Posted by <?=$info['author']?>">
+
+          <div style="background-image: url(<?=$info['photo']?>), url(<?=$default?>);"></div>
+
+      </a>
+
+    </div>
+
+      <div class="m-article-card__info">
+
+        <a href="https://pdc-fallsem.42web.io/tag/posts.php?category_id=<?=$post['category_id']?>" class="m-article-card__tag"><?=getCategory($con, $post['category_id'])?></a>
+
+      <a href="https://pdc-fallsem.42web.io/post.php?post_link=<?=$post['id']?>" class="m-article-card__info-link" aria-label="<?=$post['title']?>">
+
+        <div>
+
+          <h2 class="m-article-card__title js-article-card-title " title="<?=$post['title']?>">
+
+            <?=$post['title']?>
+
+          </h2>
+
+        </div>
+
+        <div class="m-article-card__timestamp">
+
+          <span><?=TimePost($post['created_at'])?></span>
+
+          <span>&bull;</span>
+
+          <span><?=ReadTime($post['content'])?></span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </article>
+
+  <?php $count++;} ?>
+
+      </div>
+
+    </div>
+
+    
+
+<div class="l-wrapper">
+
+  <nav class="m-pagination" aria-label="Pagination">
+
+    <span class="m-pagination__text">Page 1 of 1</span>
+
+  </nav>
+
+</div>
+
+
+
+  </div>
+
+</main>
+
+
+
+    <footer class="m-footer">
+
+      <div class="m-footer__content">
+
+        <nav
+
+          class="m-footer__nav-secondary"
+
+          role="navigation"
+
+          aria-label="Secondary menu in footer"
+
+        >
+
+          <ul class="m-secondary-menu">
+
+            <li class="nav-data-privacy">
+
+              <a href="https://pdc-fallsem.42web.io/privacy/index.php">Data &amp; privacy</a>
+
+            </li>
+
+            <li class="nav-contact">
+
+              <a href="https://pdc-fallsem.42web.io/contact/index.php">Contact</a>
+
+            </li>
+
+     <li class="nav-contact">
+
+        <a href="https://pdc-fallsem.42web.io/account/login.php">Contribute / Login</a>
+
+      </li>
+
+          </ul>
+
+        </nav>
+
+        <nav class="m-footer-social">
+
+          <a
+
+            href="https://twitter.com"
+
+            target="_blank"
+
+            rel="noopener"
+
+            aria-label="Twitter"
+
+          >
+
+            <span class="icon-twitter" aria-hidden="true"></span>
+
+          </a>
+
+          <a href="https://github.com" aria-label="GitHub">
+
+            <span class="icon-github" aria-hidden="true"></span>
+
+          </a>
+
+          <a
+
+            href="https://www.linkedin.com"
+
+            aria-label="LinkedIn"
+
+          >
+
+            <span class="icon-linkedin" aria-hidden="true"></span>
+
+          </a>
+
+          <a
+
+            href="https://www.facebook.com/"
+
+            aria-label="Facebook"
+
+          >
+
+            <span class="icon-facebook" aria-hidden="true"></span>
+
+          </a>
+
+          <a
+
+            href="https://www.instagram.com/"
+
+            aria-label="Instagram"
+
+          >
+
+            <span class="icon-instagram" aria-hidden="true"></span>
+
+          </a>
+
+        </nav>
+
+        <p class="m-footer-copyright">
+
+          <span>Athena &copy; 2021</span>
+
+          <span>&nbsp; &bull; &nbsp;</span>
+
+        </p>
+
+      </div>
+
+    </footer>
+
+    <script crossorigin="anonymous" src="../../../polyfill.io/v3/polyfill.mina50e.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+
+    <script defer src="../../assets/js/manifestb222.js?v=214a6e5c0e"></script>
+
+    <script defer src="../../assets/js/vendor/content-api.minb222.js?v=214a6e5c0e"></script>
+
+    <script defer src="../../assets/js/vendorb222.js?v=214a6e5c0e"></script>
+
+    <script defer src="../../assets/js/appb222.js?v=214a6e5c0e"></script> 
+
+<?php
 
     }
-  } else {
 
-    echo "<script>location.href='https://athena-dbms.42web.io/';</script>";
-  }
-} else {
+    }
 
-  echo "<script>location.href='https://athena-dbms.42web.io/';</script>";
-}
+    else{
 
-  ?>
+        echo "<script>location.href='https://pdc-fallsem.42web.io/';</script>";
 
-      </body>
+    }
+
+    }
+
+    else{
+
+        echo "<script>location.href='https://pdc-fallsem.42web.io/';</script>";
+
+    }
+
+?>
+
+  </body>
 
 </html>
+

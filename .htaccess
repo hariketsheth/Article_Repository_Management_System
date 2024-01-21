@@ -4,9 +4,9 @@ RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 Options -Indexes
-ErrorDocument 400 https://athena-dbms.42web.io/error/400.htm
-ErrorDocument 401 https://athena-dbms.42web.io/error/401.htm
-ErrorDocument 403 https://athena-dbms.42web.io/error/403.htm
-ErrorDocument 404 https://athena-dbms.42web.io/error/404.htm
-ErrorDocument 501 https://athena-dbms.42web.io/error/501.htm
-ErrorDocument 503 https://athena-dbms.42web.io/error/503.htm
+ErrorDocument 400 https://pdc-fallsem.42web.io/error/400.htm
+ErrorDocument 401 https://pdc-fallsem.42web.io/error/401.htm
+ErrorDocument 403 https://pdc-fallsem.42web.io/error/403.htm
+ErrorDocument 404 https://pdc-fallsem.42web.io/error/404.htm
+ErrorDocument 501 https://pdc-fallsem.42web.io/error/501.htm
+ErrorDocument 503 https://pdc-fallsem.42web.io/error/503.htm

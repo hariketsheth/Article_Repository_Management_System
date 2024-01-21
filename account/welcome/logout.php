@@ -2,12 +2,18 @@
 
 session_start();
 
-if (isset($_SESSION['uname'])) {
+if(isset($_SESSION['uname'])){
 
-  session_destroy();
-  echo "<script>location.href='https://athena-dbms.42web.io/'</script>";
-} else {
+    session_destroy();
 
-  echo "<script>location.href='https://athena-dbms.42web.io/index.php'</script>";
+    echo "<script>location.href='https://pdc-fallsem.42web.io/'</script>";
+
 }
+
+else {
+
+  echo "<script>location.href='https://pdc-fallsem.42web.io/index.php'</script>";  
+
+}
+
 ?>
