@@ -1,3 +1,6 @@
+php_value display_errors Off
+php_value mbstring.http_input auto
+php_value date.timezone America/New_York
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTPS} off
@@ -10,3 +13,5 @@ ErrorDocument 403 https://athena-dbms.42web.io/error/403.htm
 ErrorDocument 404 https://athena-dbms.42web.io/error/404.htm
 ErrorDocument 501 https://athena-dbms.42web.io/error/501.htm
 ErrorDocument 503 https://athena-dbms.42web.io/error/503.htm
+php_value post_max_size 1000M
+php_value upload_max_filesize 1000M

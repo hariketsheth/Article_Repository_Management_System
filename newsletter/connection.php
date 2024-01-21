@@ -1,17 +1,34 @@
-
-
-<?php 
-
-session_start();
-$con = mysqli_connect('sql210.epizy.com', 'epiz_29868134', 'RHfJN2hyR34WY', 'epiz_29868134_arms');
-if (!$con){
-    $_SESSION['connectiondb']="false";
-}
-else {
-     $_SESSION['connectiondb']="true";
-}
-
-?>
-
-
-
+
+
+
+
+<?php 
+DB_HOST
+
+
+session_start();
+
+$con = mysqli_connect('sql210.epizy.com', 'DB_USER', 'DB_PASS', 'DB_USER_arms');
+
+if (!$con){
+
+    $_SESSION['connectiondb']="false";
+
+}
+
+else {
+
+     $_SESSION['connectiondb']="true";
+
+}
+
+
+
+?>
+
+
+
+
+
+
+

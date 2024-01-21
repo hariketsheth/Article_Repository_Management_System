@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://athena-dbms.42web.io/account/css/sweetalert2.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://athena-dbms.42web.io/account/js/ckeditor/ckeditor.js"></script>
+<script src="https://athena-dbms.42web.io/account/js/ckeditor/ckeditor.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
   
 
@@ -230,7 +230,10 @@ if($fetch_info['role_3']=="inactive" && (!isset($_POST['update1']))){?>
 $old_stat = '"enabled"';
 $expire = date_create(date_format(date_create($fetch_info1['time_e_pwd']),"Y-m-d"));
 $today = date("Y-m-d");
-$today = date_create(date_format($today,"Y-m-d"));
+$myDateTime = DateTime::createFromFormat('Y-m-d', $today);
+$today = $myDateTime->format('Y-m-d');
+$today = new DateTime($today);
+//$today = date_create(date_format($today,"Y-m-d"));
 $diff = date_diff($today, $expire);
 if($diff->format('%R')=='+'){
     if($diff->format('%a')=='0'){
@@ -249,19 +252,19 @@ else{
 }
 if($fetch_info['author'] != NULL && ($fetch_info['github'] != NULL || $fetch_info['facebook'] != NULL || $fetch_info['instagram'] != NULL || $fetch_info['twitter'] != NULL || $fetch_info['linkedin'] != NULL || $fetch_info['website'] != NULL )){
     $result2 = mysqli_query($con,"UPDATE users SET role_3 = 'active' WHERE username = '$email'");
-    $d = mysqli_fetch_assoc($result2);
+    //$d = mysqli_fetch_assoc($result2);
 }
 else{
     $result2 = mysqli_query($con,"UPDATE users SET role_3 = 'inactive' WHERE username = '$email'");   
-      $d = mysqli_fetch_assoc($result2);
+      //$d = mysqli_fetch_assoc($result2);
 }
 if($fetch_info['github'] == NULL && $fetch_info['facebook'] == NULL && $fetch_info['instagram'] == NULL && $fetch_info['twitter'] == NULL && $fetch_info['linkedin'] == NULL && $fetch_info['website'] == NULL ){
     $result2 = mysqli_query($con,"UPDATE users SET role_3 = 'inactive' WHERE username = '$email'");   
-      $d = mysqli_fetch_assoc($result2);
+      //$d = mysqli_fetch_assoc($result2);
 }
 if($fetch_info['author'] == NULL){
     $result2 = mysqli_query($con,"UPDATE users SET role_3 = 'inactive' WHERE username = '$email'");   
-      $d = mysqli_fetch_assoc($result2);
+     // $d = mysqli_fetch_assoc($result2);
 }
 
 if(isset($_POST['update3'])){
@@ -382,8 +385,32 @@ if(isset($_GET['category_aprv'])){
 }
 if(isset($_GET['publish_successful'])){
     $temp = $_GET['publish_successful'];
-    if($fetch_info['role_2'] != "Contributor"){
+    if($fetch_info['role_2'] == "Admin"){
         PublishPost($con, $temp);
+        echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
+    }
+
+}
+if(isset($_GET['clear_successful'])){
+    $temp = $_GET['clear_successful'];
+    if($fetch_info['role_2'] == "Admin"){
+        ClearComment($con, $temp);
+        echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
+    }
+
+}
+if(isset($_GET['unpublish_successful'])){
+    $temp = $_GET['unpublish_successful'];
+    if($fetch_info['role_2'] == "Admin"){
+       UnpublishPost($con, $temp);
+        echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
+    }
+
+}
+if(isset($_GET['retract_review'])){
+    $temp = $_GET['retract_review'];
+    if($fetch_info['role_2'] != "Contributor"){
+       RetractReview($con, $temp);
         echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
     }
 
@@ -398,7 +425,7 @@ if(isset($_GET['send_successful']) && isset($_GET['encryption_id'])){
         if($temp2 == $email && $fetch_info2['status'] == "Draft"){
             $query1 = "UPDATE posts SET status ='Pending' WHERE id='$temp1' AND username = '$temp2'";
             $run_q = mysqli_query($con, $query1);
-            $d = mysqli_fetch_assoc($run_q); 
+            //$d = mysqli_fetch_assoc($run_q); 
             echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
         }
         else{
@@ -524,8 +551,7 @@ if(isset($_POST['update2'])){
                         allowOutsideClick: false,
                         icon: 'info',
                         title: 'INSTRUCTIONS',
-                        text: 'Greetings <?php echo $fetch_info['
-                        fullname ']; ?>, Since your password has changed, Please use the new password to login.'
+                        text: `Greetings <?php echo $fetch_info['fullname']; ?>, Since your password has changed, Please use the new password to login.`
                     })
                     .then((value) => {
                         location.href = 'https://athena-dbms.42web.io/account/welcome/logout.php'
@@ -1123,7 +1149,7 @@ if(isset($_POST['update2'])){
                     </div>
                     <div class="tab-pane fade" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                         <h3 class="mb-4" style="font-family: Orion;">Manage Posts</h3>
-                        <div class="row" style="overflow-y:auto; height: 550px;">
+                        <div class="row" style="overflow-y:auto; height: 650px;">
                             <div class="col-lg-12">
                                 <section class="panel">
                                     <table class="table table-striped table-advance table-hover">
@@ -1131,17 +1157,16 @@ if(isset($_POST['update2'])){
                                             <tr>
                                                 <th>Title</th>
                                                 <th>Category</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th style="width: 400px; ">Action</th>
                                             </tr>
                                             <tr style="background-color: rgba(240,173,78,0.7);">
-                                                <th colspan="4" style="text-align: center; color: #fff;">PENDING</th>
+                                                <th colspan="3" style="text-align: center; color: #fff;">PENDING</th>
                                             </tr>
                                             <?php                
           $posts = getAllPost($con, 0);
           if(empty($posts)){?>
                                             <tr>
-                                                <td colspan="4" style="text-align: center;">No Pending Articles</td>
+                                                <td colspan="3" style="text-align: center;">No Pending Articles</td>
                                             </tr>
                                             <?php }
           $count=1;
@@ -1150,19 +1175,28 @@ if(isset($_POST['update2'])){
                                             <tr>
                                                 <td><?=$post['title']?></td>
                                                 <td><?=getCategory($con,$post['category_id'])?></td>
-                                                <td><?=$post['status']?></td>
+                                                
 
                                                 <td style="width: 290px;">
+                                                <?php if($post['status']!='Published' && $fetch_info['role_2'] == 'Admin'){ ?>
                                                     <div class="btn-group">
-                                                        <a class="btn btn-success <?=((($post['status']=='Published') || ($fetch_info['role_2'] != 'Admin'))?'disabled':'')?>"
+                                                        <a class="btn btn-success"
                                                             href="?publish_successful=<?=$post['id']?>">Publish<i
                                                                 class="icon_close_alt2"></i></a>
                                                     </div>
+                                                <?php } ?>
                                                     <div class="btn-group">
                                                         <a class="btn btn-primary <?=(($post['status']=='Published')?'disabled':'')?>"
                                                             href="editpost.php?encryption_post=<?=$post['id']?>">Review<i
                                                                 class="icon_close_alt2"></i></a>
                                                     </div>
+                                                    <?php if(!empty($post['reason']) && $fetch_info['role_2'] == 'Admin') { ?>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-info" style="color: #fff;"
+                                                            href="?clear_successful=<?=$post['id']?>">Clear<i
+                                                                class="icon_close_alt2"></i></a>
+                                                    </div>
+                                                    <?php } ?>
                                                     <div class="btn-group">
                                                         <a class="btn btn-danger" style="color: #fff;"
                                                             href="removepost.php?remove_encryption_post=<?=$post['id']?>"><?=((($post['status']=="In Review") || ($post['status']=="Pending")) ?"Reject":"Remove")?><i
@@ -1175,16 +1209,16 @@ if(isset($_POST['update2'])){
           }
           ?>
                                             <tr>
-                                                <td height="50" colspan="4"></td>
+                                                <td height="50" colspan="3"></td>
                                             </tr>
                                             <tr style="background-color: rgba(2,117,216,0.7);">
-                                                <th colspan="4" style="text-align: center; color: #fff;">IN REVIEW</th>
+                                                <th colspan="3" style="text-align: center; color: #fff;">IN REVIEW</th>
                                             </tr>
                                             <?php                
           $posts = getAllPost($con, 1);
           if(empty($posts)){?>
                                             <tr>
-                                                <td colspan="4" style="text-align: center;">No Articles In Review</td>
+                                                <td colspan="3" style="text-align: center;">No Articles In Review</td>
                                             </tr>
                                             <?php }
           $count=1;
@@ -1193,7 +1227,7 @@ if(isset($_POST['update2'])){
                                             <tr>
                                                 <td><?=$post['title']?></td>
                                                 <td><?=getCategory($con,$post['category_id'])?></td>
-                                                <td><?=$post['status']?></td>
+                                             
 
                                                 <td style="width: 290px;">
                                                     <div class="btn-group">
@@ -1206,9 +1240,21 @@ if(isset($_POST['update2'])){
                                                             href="editpost.php?encryption_post=<?=$post['id']?>">Review<i
                                                                 class="icon_close_alt2"></i></a>
                                                     </div>
+                                                    <?php if(!empty($post['reason']) && $fetch_info['role_2'] == 'Admin') { ?>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-info" style="color: #fff;"
+                                                            href="?clear_successful=<?=$post['id']?>">Clear<i
+                                                                class="icon_close_alt2"></i></a>
+                                                    </div>
+                                                    <?php } ?>
                                                     <div class="btn-group">
                                                         <a class="btn btn-danger" style="color: #fff;"
                                                             href="removepost.php?remove_encryption_post=<?=$post['id']?>"><?=((($post['status']=="In Review") || ($post['status']=="Pending")) ?"Reject":"Remove")?><i
+                                                                class="icon_close_alt2"></i></a>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-dark" style="color: #fff;"
+                                                            href="?retract_review=<?=$post['id']?>">Retract<i
                                                                 class="icon_close_alt2"></i></a>
                                                     </div>
                                                 </td>
@@ -1218,16 +1264,16 @@ if(isset($_POST['update2'])){
           }
           ?>
                                             <tr>
-                                                <td height="50" colspan="4"></td>
+                                                <td height="50" colspan="3"></td>
                                             </tr>
                                             <tr style="background-color: rgba(92,184,92,0.7);">
-                                                <th colspan="4" style="text-align: center; color: #fff;">PUBLISHED</th>
+                                                <th colspan="3" style="text-align: center; color: #fff;">PUBLISHED</th>
                                             </tr>
                                             <?php                
           $posts = getAllPost($con, 2);
           if(empty($posts)){?>
                                             <tr>
-                                                <td colspan="4" style="text-align: center;"> No Published Articles</td>
+                                                <td colspan="3" style="text-align: center;"> No Published Articles</td>
                                             </tr>
                                             <?php }
           $count=1;
@@ -1236,19 +1282,28 @@ if(isset($_POST['update2'])){
                                             <tr>
                                                 <td><?=$post['title']?></td>
                                                 <td><?=getCategory($con,$post['category_id'])?></td>
-                                                <td><?=$post['status']?></td>
+                                                
 
                                                 <td style="width: 290px;">
+                                                <?php if($post['status']=='Published' && $fetch_info['role_2'] == 'Admin'){ ?>
                                                     <div class="btn-group">
-                                                        <a class="btn btn-success <?=((($post['status']=='Published') || ($fetch_info['role_2'] != 'Admin'))?'disabled':'')?>"
-                                                            href="?publish_successful=<?=$post['id']?>">Publish<i
+                                                        <a class="btn btn-secondary"
+                                                            href="?unpublish_successful=<?=$post['id']?>">Unpublish<i
                                                                 class="icon_close_alt2"></i></a>
                                                     </div>
+                                                <?php } ?>
                                                     <div class="btn-group">
                                                         <a class="btn btn-primary <?=(($post['status']=='Published')?'disabled':'')?>"
                                                             href="editpost.php?encryption_post=<?=$post['id']?>">Review<i
                                                                 class="icon_close_alt2"></i></a>
                                                     </div>
+                                                    <?php if(!empty($post['reason']) && $fetch_info['role_2'] == 'Admin') { ?>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-info" style="color: #fff;"
+                                                            href="?clear_successful=<?=$post['id']?>">Clear<i
+                                                                class="icon_close_alt2"></i></a>
+                                                    </div>
+                                                    <?php } ?>
                                                     <div class="btn-group">
                                                         <a class="btn btn-danger" style="color: #fff;"
                                                             href="removepost.php?remove_encryption_post=<?=$post['id']?>"><?=((($post['status']=="In Review") || ($post['status']=="Pending")) ?"Reject":"Remove")?><i
@@ -1317,6 +1372,7 @@ foreach($categories as $ct){
                                                     <label class="required-field">Post Content</label>
                                                     <textarea class="form-control ckeditor" id="editor1" name="editor1"
                                                         rows="10" required></textarea>
+                                                                                
                                                 </div>
                                             </div>
                                             <hr style="border-width: 5px;">
@@ -1360,10 +1416,10 @@ include ('dumper.php');
 
 try {
 	$world_dumper = Shuttle_Dumper::create(array(
-		'host' => 'sql210.epizy.com',
-		'username' => 'epiz_29868134',
-		'password' => 'RHfJN2hyR34WY',
-		'db_name' => 'epiz_29868134_arms',
+		'host' => 'DB_HOST',
+		'username' => 'DB_USER',
+		'password' => 'DB_PASS',
+		'db_name' => 'DB_USER_arms',
 	));
 
 	$world_dumper->dump('backup/arms.sql');
@@ -1855,8 +1911,7 @@ else{
                             <script>
                                 function logout() {
                                     Swal.fire({
-                                        title: 'Are you sure, <?php echo $fetch_info['
-                                        name '] ?>?',
+                                        title: `Are you sure, <?php echo $fetch_info['name'] ?>?`,
                                         text: "You want to logout from your account.",
                                         icon: 'warning',
                                         showCancelButton: true,
@@ -1873,8 +1928,7 @@ else{
                                                     allowOutsideClick: false,
                                                     icon: 'success',
                                                     title: 'LOGOUT SUCCESSFUL',
-                                                    text: 'Greetings <?php echo $fetch_info['
-                                                    name '] ?>, Have a nice day ahead. Keep checking the Account time-to-time for new updates & announcements.'
+                                                    text: `Greetings <?php echo $fetch_info['name'] ?>, Have a nice day ahead. Keep checking the Account time-to-time for new updates & announcements.`
                                                 })
 
                                                 .then((value) => {

@@ -245,7 +245,7 @@ function getPost($con, $email, $temp){
 
 
 
-    while($d=mysqli_fetch_assoc($run)){
+    while($d=$run->fetch_assoc()){
 
         $data[]=$d;
 
@@ -262,8 +262,7 @@ function getAllCategory($con){
     $run=mysqli_query($con,$query);
 
     $data = array();
-
-    while($d=mysqli_fetch_assoc($run)){
+    while($d=$run->fetch_assoc()){
 
         $data[]=$d;
 
@@ -339,7 +338,7 @@ function DeleteCategory($con, $id){
 
     $run=mysqli_query($con,$query);
 
-    $d = mysqli_fetch_assoc($run);
+   // $d = mysqli_fetch_assoc($run);
 
 }
 
@@ -359,7 +358,7 @@ function SavePost($con, $id, $update){
 
     $run=mysqli_query($con,$query);
 
-    $d = mysqli_fetch_assoc($run);
+    //$d = mysqli_fetch_assoc($run);
 
 }
 
@@ -369,7 +368,7 @@ function AssignPost($con, $id){
 
     $run=mysqli_query($con,$query);
 
-    $d = mysqli_fetch_assoc($run);
+   // $d = mysqli_fetch_assoc($run);
 
 }
 
@@ -379,7 +378,7 @@ function ApproveCategory($con, $id){
 
     $run=mysqli_query($con,$query);
 
-    $d = mysqli_fetch_assoc($run);
+    //$d = mysqli_fetch_assoc($run);
 
 }
 
@@ -390,7 +389,25 @@ function PublishPost($con, $id){
 
     $run=mysqli_query($con,$query);
 
-    $d = mysqli_fetch_assoc($run);
+    //$d = mysqli_fetch_assoc($run);
+
+}
+
+function UnpublishPost($con, $id){
+    $query= "UPDATE posts SET status ='Pending' WHERE id='$id'";
+    $run=mysqli_query($con,$query);
+    //$d = mysqli_fetch_assoc($run);
+}
+function RetractReview($con, $id){
+    $query= "UPDATE posts SET status ='Pending' WHERE id='$id'";
+    $run=mysqli_query($con,$query);
+    //$d = mysqli_fetch_assoc($run);
+}
+
+function ClearComment($con, $id){
+    $query= "UPDATE posts SET reason ='' WHERE id='$id'";
+    $run=mysqli_query($con,$query);
+   // $d = mysqli_fetch_assoc($run);
 
 }
 
@@ -400,7 +417,7 @@ function ReviewPost($con, $id, $reason){
 
     $run=mysqli_query($con,$query);
 
-    $d = mysqli_fetch_assoc($run);
+    //$d = mysqli_fetch_assoc($run);
 
 }
 

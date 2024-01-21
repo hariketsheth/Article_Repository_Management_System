@@ -20,7 +20,7 @@ function SetBookmark($con,$id, $title, $post){
     if($count['count']<1){
 
     $query1 = mysqli_query($con, "INSERT INTO bookmarks(username, title, post_id) VALUES ('$id', '$title', '$post')");
-    $data = mysqli_fetch_assoc($query1);
+    //$data = mysqli_fetch_assoc($query1);
     
     }
 echo "<script>location.href='https://athena-dbms.42web.io/post.php?post_link=".$post."';</script>";
@@ -74,7 +74,7 @@ function addVisit($con, $temp1, $temp2, $temp3){
     date_default_timezone_set("Asia/Kolkata");
     $time = date('Y-m-d H:i:s');
     $query1 = mysqli_query($con, "INSERT INTO visitors(ip_address, mac_address, link, time_created_at) VALUES ('$temp1', '$temp2', '$temp3', '$time')");
-    $data1 = mysqli_fetch_assoc($query1);
+    //$data1 = mysqli_fetch_assoc($query1);
     if (!($query1)){
         echo "<script>location.href = 'https://athena-dbms.42web.io/error/503.htm';</script>";
         

@@ -202,9 +202,10 @@ $xceding= (time()-$_SESSION['last_login_timestamp']);
 
   title: 'UPDATE POST',
 customClass: 'swal-wide',
-  html: `<style>*{font-family:Arial; padding: 12px; text-align: center; }</style><p>Greetings <?php echo $fetch_info['author']; ?>, <br>You are about to change the post from "Pending" to "In Review". The details of the concerned post are as follows: </p><table border="1"><tr><td>Post Title </td><td> <b><?php echo $fetch_info1['title'];?></b></td></tr><tr><td>Post Category </td><td> <b><?=getCategory($con,$fetch_info1['category_id'])?></b></td></tr><tr><td>Editor Name </td><td> <b><?=$fetch_info['author']?></b></td></tr></table>`,
+  html: `<style>*{font-family:Arial; padding: 12px; text-align: center; }</style><p>Greetings <?php echo $fetch_info['author']; ?>, <br>You are about to change the post from "Pending" to "In Review". The details of the concerned post are as follows: </p><table border="1"><tr><td>Post Title </td><td> <b><?php echo $fetch_info1['title'];?></b></td></tr><tr><td>Post Category </td><td> <b><?=getCategory($con,$fetch_info1['category_id'])?></b></td></tr><tr><td>Editor Name </td><td> <b><?=$fetch_info['author']?></b></td></tr><?php if(!empty($fetch_info1['reason'])) { ?> <tr><td>Previous Review Comments: </td><td><b><?php echo $fetch_info1['reason']; ?> </b></td></tr><?php } ?></table>`,
 
   showConfirmButton: true,
+  showCancelButton: true, 
   focusConfirm: false,
 
 }).then((result) => {
@@ -233,7 +234,7 @@ customClass: 'swal-wide',
 
   title: 'EDITING POST',
 customClass: 'swal-wide',
-  html: `<style>*{font-family:Arial; padding: 12px; text-align: center; }</style><p>Greetings <?php echo $fetch_info['author']; ?>, <br>You are about to edit the contents of the post. <br> Please be careful while making edits. The details of the concerned post are as follows: </p><table style="margin-left: 28%;" border="1"><tr><td>Post Title </td><td> <b><?php echo $fetch_info1['title'];?></b></td></tr><tr><td>Post Category </td><td> <b><?=getCategory($con,$fetch_info1['category_id'])?></b></td></tr><tr><td>Editor Name </td><td> <b><?=$fetch_info['author']?></b></td></tr></table>
+  html: `<style>*{font-family:Arial; padding: 12px; text-align: center; }</style><p>Greetings <?php echo $fetch_info['author']; ?>, <br>You are about to edit the contents of the post. <br> Please be careful while making edits. The details of the concerned post are as follows: </p><table style="margin-left: 28%;" border="1"><tr><td>Post Title </td><td> <b><?php echo $fetch_info1['title'];?></b></td></tr><tr><td>Post Category </td><td> <b><?=getCategory($con,$fetch_info1['category_id'])?></b></td></tr><tr><td>Editor Name </td><td> <b><?=$fetch_info['author']?></b></td></tr><?php if(!empty($fetch_info1['reason'])) { ?> <tr><td>Previous Review Comments: </td><td><b><?php echo $fetch_info1['reason']; ?> </b></td></tr><?php } ?></table>
 
   <form action="" method="POST">
                                             <div class="form-group">

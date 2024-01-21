@@ -256,7 +256,7 @@ $xceding= (time()-$_SESSION['last_login_timestamp']);
 
             $run_q = mysqli_query($con, $query1);
 
-            $d = mysqli_fetch_assoc($run_q); 
+             
 
             echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
 
@@ -267,8 +267,8 @@ $xceding= (time()-$_SESSION['last_login_timestamp']);
             $query1 = "DELETE FROM posts WHERE id='$temp1' AND username = '$temp2'";
 
             $run_q = mysqli_query($con, $query1);
-
-            $d = mysqli_fetch_assoc($run_q); 
+            //$d=$run_q->fetch_assoc();
+            
 
             echo "<script>location.href='https://athena-dbms.42web.io/account/welcome/index.php';</script>";
 
