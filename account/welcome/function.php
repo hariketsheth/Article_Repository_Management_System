@@ -421,4 +421,16 @@ function ReviewPost($con, $id, $reason){
 
 }
 
+function getMonthlyPublishedPosts($con, $month, $year) {
+    $query = "SELECT * FROM posts WHERE status='Published' AND MONTH(created_at) = $month AND YEAR(created_at) = $year ORDER BY created_at DESC";
+    $run = mysqli_query($con, $query);
+    $data = array();
+
+    while($d = mysqli_fetch_assoc($run)) {
+        $data[] = $d;
+    }
+
+    return $data;
+}
+
 ?>
