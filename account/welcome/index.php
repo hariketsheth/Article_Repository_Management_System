@@ -1943,6 +1943,70 @@ else{
                             <button class="btn btn-light">Cancel</button>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="monthly-posts" role="tabpanel" aria-labelledby="monthly-posts-tab">
+                        <h3 class="mb-4" style="font-family: Orion;">Monthly Published Posts</h3>
+                        <form action="" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Select Month</label>
+                                        <select class="form-control" name="month" required>
+                                            <option value="1">January</option>
+                                            <option value="2">February</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">August</option>
+                                            <option value="9">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Select Year</label>
+                                        <select class="form-control" name="year" required>
+                                            <?php
+                                            $currentYear = date("Y");
+                                            for ($year = $currentYear; $year >= 2000; $year--) {
+                                                echo "<option value=\"$year\">$year</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="submit" class="btn btn-primary" value="View Posts" name="view_posts">
+                            </div>
+                        </form>
+                        <?php
+                        if (isset($_POST['view_posts'])) {
+                            $month = $_POST['month'];
+                            $year = $_POST['year'];
+                            $monthlyPosts = getMonthlyPublishedPosts($con, $month, $year);
+                            if (empty($monthlyPosts)) {
+                                echo "<p>No articles published in the selected month.</p>";
+                            } else {
+                                echo "<table class=\"table table-striped table-advance table-hover\">";
+                                echo "<thead><tr><th>Title</th><th>Category</th><th>Published Date</th></tr></thead>";
+                                echo "<tbody>";
+                                foreach ($monthlyPosts as $post) {
+                                    echo "<tr>";
+                                    echo "<td>{$post['title']}</td>";
+                                    echo "<td>" . getCategory($con, $post['category_id']) . "</td>";
+                                    echo "<td>{$post['created_at']}</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody></table>";
+                            }
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
